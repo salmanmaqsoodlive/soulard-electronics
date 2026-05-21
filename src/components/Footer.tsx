@@ -6,7 +6,7 @@ const company = ['About Us', 'Services', 'Industries', 'Case Studies', 'Blog']
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-800 border-t border-electric-blue/10">
+    <footer className="bg-navy-800 border-t border-electric-blue/20">
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-grid bg-grid opacity-30 pointer-events-none" />
 
@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-9 h-9 border-2 border-electric-blue rounded flex items-center justify-center">
-                <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-electric-cyan">
+                <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-electric-blue">
                   <rect x="3" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.5"/>
                   <rect x="14" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.5"/>
                   <rect x="3" y="14" width="7" height="7" stroke="currentColor" strokeWidth="1.5"/>
@@ -24,8 +24,8 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <span className="font-display text-white text-lg tracking-widest uppercase block">SOULARD</span>
-                <span className="font-display text-electric-cyan text-xs tracking-[0.3em] uppercase -mt-1 block">Technology</span>
+                <span className="font-display text-gray-900 text-lg tracking-widest uppercase block">SOULARD</span>
+                <span className="font-display text-electric-blue text-xs tracking-[0.3em] uppercase -mt-1 block">Technology</span>
               </div>
             </div>
             <p className="text-steel-silver text-sm leading-relaxed mb-6">
@@ -33,7 +33,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-2">
               {serviceAreas.map((state) => (
-                <span key={state} className="text-xs border border-electric-blue/20 text-electric-cyan/70 px-2 py-0.5 rounded">
+                <span key={state} className="text-xs border border-electric-blue/30 text-electric-blue px-2 py-0.5 rounded">
                   {state}
                 </span>
               ))}
@@ -42,11 +42,11 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-display text-white text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Services</h4>
+            <h4 className="font-display text-gray-900 text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Services</h4>
             <ul className="space-y-3">
               {services.map((s) => (
                 <li key={s}>
-                  <Link href="/services" className="text-steel-silver text-sm hover:text-electric-cyan transition-colors flex items-center gap-2">
+                  <Link href="/services" className="text-steel-silver text-sm hover:text-electric-blue transition-colors flex items-center gap-2">
                     <span className="w-1 h-1 bg-electric-blue/50 rounded-full" />
                     {s}
                   </Link>
@@ -57,11 +57,11 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-display text-white text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Company</h4>
+            <h4 className="font-display text-gray-900 text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Company</h4>
             <ul className="space-y-3">
               {company.map((c) => (
                 <li key={c}>
-                  <Link href="/about" className="text-steel-silver text-sm hover:text-electric-cyan transition-colors">
+                  <Link href="/about" className="text-steel-silver text-sm hover:text-electric-blue transition-colors">
                     {c}
                   </Link>
                 </li>
@@ -71,13 +71,13 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-white text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Contact</h4>
+            <h4 className="font-display text-gray-900 text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Contact</h4>
             <div className="space-y-4 text-sm text-steel-silver">
               <p>Serving K-12 institutions across 6 states</p>
-              <Link href="/contact" className="block hover:text-electric-cyan transition-colors">info@soulardtech.com</Link>
+              <Link href="/contact" className="block hover:text-electric-blue transition-colors">info@soulardtech.com</Link>
               <Link
                 href="/contact"
-                className="inline-block mt-4 px-5 py-2.5 border border-electric-blue/40 text-electric-cyan text-xs uppercase tracking-widest hover:bg-electric-blue/10 transition-colors"
+                className="inline-block mt-4 px-5 py-2.5 border border-electric-blue/50 text-electric-blue text-xs uppercase tracking-widest hover:bg-electric-blue/10 transition-colors"
               >
                 Get Consultation
               </Link>
@@ -86,13 +86,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-electric-blue/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-steel-silver/50 text-xs">
+        <div className="mt-12 pt-8 border-t border-electric-blue/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-steel-silver/60 text-xs">
             © {new Date().getFullYear()} Soulard Technology. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/" className="text-steel-silver/50 text-xs hover:text-electric-cyan transition-colors">Privacy Policy</Link>
-            <Link href="/" className="text-steel-silver/50 text-xs hover:text-electric-cyan transition-colors">Terms of Service</Link>
+            <Link href="/" className="text-steel-silver/60 text-xs hover:text-electric-blue transition-colors">Privacy Policy</Link>
+            <Link href="/" className="text-steel-silver/60 text-xs hover:text-electric-blue transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

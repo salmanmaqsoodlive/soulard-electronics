@@ -8,10 +8,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
   { href: '/industries', label: 'Industries' },
-  { href: '/training', label: 'Training' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/products', label: 'Products' },
+  { href: '/manufacturers', label: 'Manufacturers' },
+  { href: '/catalogs', label: 'Catalogs' },
+  { href: '/resources', label: 'Resources' },
 ]
 
 export default function Navbar() {
@@ -33,7 +34,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-navy-900/90 backdrop-blur-xl border-b border-electric-blue/10 py-3'
+            ? 'bg-white/95 backdrop-blur-xl border-b border-electric-blue/20 shadow-sm py-3'
             : 'bg-transparent py-5'
         }`}
       >
@@ -42,7 +43,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-9 h-9 border-2 border-electric-blue rounded flex items-center justify-center relative overflow-hidden">
               <div className="absolute inset-0 bg-electric-blue/10 group-hover:bg-electric-blue/20 transition-colors" />
-              <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-electric-cyan z-10">
+              <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-electric-blue z-10">
                 <rect x="3" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.5"/>
                 <rect x="14" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.5"/>
                 <rect x="3" y="14" width="7" height="7" stroke="currentColor" strokeWidth="1.5"/>
@@ -50,8 +51,8 @@ export default function Navbar() {
               </svg>
             </div>
             <div>
-              <span className="font-display text-white text-lg tracking-widest uppercase">SOULARD</span>
-              <span className="font-display text-electric-cyan text-xs block tracking-[0.3em] uppercase -mt-1">Technology</span>
+              <span className={`font-display text-lg tracking-widest uppercase transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>SOULARD</span>
+              <span className="font-display text-electric-blue text-xs block tracking-[0.3em] uppercase -mt-1">Technology</span>
             </div>
           </Link>
 
@@ -61,13 +62,17 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 font-body text-sm font-medium tracking-wide transition-colors group ${
-                  pathname === link.href ? 'text-electric-cyan' : 'text-steel-silver hover:text-white'
+                className={`relative px-3 py-2 font-body text-sm font-medium tracking-wide transition-colors group ${
+                  pathname === link.href
+                    ? 'text-electric-blue'
+                    : scrolled
+                    ? 'text-gray-600 hover:text-gray-900'
+                    : 'text-gray-300 hover:text-white'
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-electric-cyan transition-all duration-300 ${
+                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-electric-blue transition-all duration-300 ${
                     pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
@@ -79,10 +84,12 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="/contact"
-              className="relative px-6 py-2.5 text-sm font-medium font-body text-white overflow-hidden group border border-electric-blue/50 rounded"
+              className={`relative px-6 py-2.5 text-sm font-medium font-body overflow-hidden group border rounded transition-colors ${
+                scrolled
+                  ? 'border-electric-blue text-electric-blue hover:bg-electric-blue/10'
+                  : 'border-white/40 text-white hover:border-electric-blue/70 hover:text-electric-blue'
+              }`}
             >
-              <span className="absolute inset-0 bg-electric-blue/0 group-hover:bg-electric-blue/20 transition-colors duration-300" />
-              <span className="absolute inset-0 border border-electric-cyan/0 group-hover:border-electric-cyan/50 rounded transition-all duration-300" />
               <span className="relative z-10 tracking-wider uppercase text-xs">Get Consultation</span>
             </Link>
           </div>
@@ -95,15 +102,15 @@ export default function Navbar() {
           >
             <motion.span
               animate={menuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-electric-cyan block transition-colors"
+              className={`w-6 h-0.5 block transition-colors ${scrolled ? 'bg-electric-blue' : 'bg-white'}`}
             />
             <motion.span
               animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-6 h-0.5 bg-steel-silver block"
+              className={`w-6 h-0.5 block ${scrolled ? 'bg-gray-500' : 'bg-gray-300'}`}
             />
             <motion.span
               animate={menuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-electric-cyan block"
+              className={`w-6 h-0.5 block transition-colors ${scrolled ? 'bg-electric-blue' : 'bg-white'}`}
             />
           </button>
         </div>
@@ -117,7 +124,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-navy-900/98 backdrop-blur-2xl flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-2xl flex flex-col items-center justify-center"
           >
             <div className="flex flex-col items-center gap-8">
               {navLinks.map((link, i) => (
@@ -130,7 +137,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="font-display text-4xl text-white hover:text-electric-cyan transition-colors tracking-widest uppercase"
+                    className="font-display text-4xl text-gray-900 hover:text-electric-blue transition-colors tracking-widest uppercase"
                   >
                     {link.label}
                   </Link>
@@ -144,7 +151,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setMenuOpen(false)}
-                  className="mt-4 px-8 py-3 border border-electric-cyan text-electric-cyan font-body text-sm uppercase tracking-widest hover:bg-electric-cyan/10 transition-colors"
+                  className="mt-4 px-8 py-3 border border-electric-blue text-electric-blue font-body text-sm uppercase tracking-widest hover:bg-electric-blue/10 transition-colors"
                 >
                   Get Consultation
                 </Link>

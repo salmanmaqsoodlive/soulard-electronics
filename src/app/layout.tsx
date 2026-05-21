@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${orbitron.variable} ${inter.variable}`}>
-      <body className="bg-navy font-body antialiased">
+      <body className="bg-white font-body antialiased">
         {children}
       </body>
     </html>
