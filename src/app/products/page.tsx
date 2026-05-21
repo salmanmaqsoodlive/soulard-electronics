@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -7,27 +6,12 @@ import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Products | Soulard Technology',
-  description: 'Electronic access control products for K-12 schools — card readers, controllers, door hardware, intercoms, and more.',
+  description: 'Electronic access control products for K-12 schools — credentials, readers, Allegion locks, and system components.',
 }
 
-const categories = [
+const catalog = [
   {
-    title: 'Access Control Panels',
-    desc: 'The intelligence at the heart of every access control system. We spec and deploy controllers from Lenel, Software House, Genetec, and other leading platforms — scaled from single-door to enterprise-wide.',
-    features: ['Single & multi-door controllers', 'IP-based & hybrid panels', 'Failsafe / fail-secure configurations', 'Battery backup & power supervision'],
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M8 21h8M12 17v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Card Readers & Credentials',
-    desc: "From proximity cards to mobile credentials, we deploy the full spectrum of reader technologies — selecting the right credential type for each facility's threat level and budget.",
-    features: ['HID, ASSA ABLOY & Allegion readers', 'Mobile & BLE credentials', 'Multi-technology readers', 'Smart card (MIFARE, DESFire)'],
-    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80',
+    category: 'Credentials & Readers',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -35,12 +19,28 @@ const categories = [
         <path d="M6 15h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
+    groups: [
+      {
+        heading: 'Credentials (Schlage & HID)',
+        items: [
+          'Proximity & Smart Technology Cards',
+          'Proximity & Smart Technology Key Fobs',
+          'Proximity Tag Stickers',
+          'Non-Technology Cards',
+        ],
+      },
+      {
+        heading: 'Readers (Schlage & HID)',
+        items: [
+          'Mobile-Enabled Multi-Technology Readers',
+          'Proximity and Magstripe Readers',
+          'FIPS201 Compliant Readers',
+        ],
+      },
+    ],
   },
   {
-    title: 'Door Hardware & Locking',
-    desc: 'Electric strikes, magnetic locks, electrified hardware, and door position switches — we design locking systems that meet life-safety codes while delivering reliable access control.',
-    features: ['Electric strikes & mag locks', 'Electrified panic hardware', 'Door position & REX sensors', 'ADA-compliant hardware'],
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
+    category: 'Allegion Hardwired / Wireless Locks',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -48,41 +48,105 @@ const categories = [
         <circle cx="12" cy="16" r="1" fill="currentColor"/>
       </svg>
     ),
+    groups: [
+      {
+        heading: 'Allegion Hardwired / Wireless Locks',
+        items: [
+          'Schlage XE360 Series Wireless Tubular Lock',
+          'Schlage XE360 Wireless Mortise Lock',
+          'Schlage XE360 Wireless Exit Wide Stile Lock',
+          'Schlage Control Mobile Enabled Smart Interconnected Lock',
+          'Schlage Control Mobile Enabled Smart Deadbolt',
+          'Schlage LE Mobile Enabled Wireless Lock',
+          'Schlage NDEB Mobile Enabled Wireless Lock',
+          'Schlage AD-300 Networked Hardwired Cylindrical Lock',
+          'Schlage AD-300 Networked Hardwired Mortise Lock',
+          'Schlage AD-300 Networked Hardwired Exit Trim',
+          'Schlage AD-400 Networked Wireless Cylindrical Lock',
+          'Schlage AD-400 Networked Wireless Mortise Lock',
+          'Schlage AD-400 Networked Wireless Exit Trim',
+          'Schlage AD-200 Standalone; Rights on Lock',
+          'Schlage AD-250 Standalone; Rights on Card',
+        ],
+      },
+      {
+        heading: 'Allegion AD Hardwired and Wireless Lock Parts',
+        items: [
+          'Reader Modules (KP, MS, MSK, MT/SI, MTK/SIK/FMK, DT)',
+          'Magnetic Swipe Cleaning Cards',
+          'Interior Escutcheon',
+          'Interior Baseplate Gasket',
+          'USB Cover Plug',
+          'Cable, USB, AD/CO, Exit',
+          'Exterior Escutcheon',
+          'Exterior Gasket Kit',
+          'Interior Baseplate Subassembly',
+          'Exterior Baseplate Subassembly',
+          'Interior Spring Cage',
+          'Exterior Spring Cage',
+          'Latches',
+          'Exterior Lever (less cylinder)',
+          'Interior Lever',
+          'Spindle and Hub Kit',
+        ],
+      },
+    ],
   },
   {
-    title: 'Intercoms & Video Entry',
-    desc: 'IP video intercoms at every entry point give staff visual confirmation before granting access — an essential layer for K-12 visitor management.',
-    features: ['IP video intercoms', 'Door station cameras', 'Two-way audio', 'Integration with access control'],
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80',
+    category: 'System Components',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M15 10l4.553-2.069A1 1 0 0121 8.867v6.266a1 1 0 01-1.447.902L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="currentColor" strokeWidth="1.5"/>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
-  },
-  {
-    title: 'Visitor Management',
-    desc: 'Purpose-built visitor management platforms that screen guests, print badges, and sync with your access control system — keeping unvetted visitors from roaming freely.',
-    features: ['Sex offender screening', 'Driver\'s license scanning', 'Temporary badge printing', 'Watch-list alerts'],
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="1.5"/>
-        <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="1.5"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Security Management Software',
-    desc: 'The software layer that ties everything together — scheduling, reporting, lockdown commands, and integrations with video surveillance and intrusion detection.',
-    features: ['Lenel OnGuard', 'Software House CCURE 9000', 'Genetec Security Center', 'Cloud-managed platforms'],
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M9 9h6M9 12h6M9 15h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
+    groups: [
+      {
+        heading: 'System Components',
+        items: [
+          'Electric Strikes',
+          'Power Supplies',
+          'Key Switches',
+          'Request-to-Exit Bars',
+          'Electric Hinge',
+          'Monitoring Stations and Consoles',
+          'Door Position Switches',
+          'Magnetic Locks',
+          'Magnetic Hold Opens',
+          'Push Buttons',
+          'Lockdown Buttons',
+          'Electric Power Transfers',
+          'Armored Door Cords',
+          'Motion Sensors',
+        ],
+      },
+      {
+        heading: 'Parts & Accessories',
+        items: [
+          'Spindle Spring',
+          'Deadbolt Thumb Turn Assembly',
+          'IPB Retrofit Kit Module',
+          'Strike Faceplates and Armor Fronts',
+          'Door Position Switch',
+          'Door Thickness Kit',
+          'Decorative Plates',
+          'Offline/Hardwired Communication Module Cover',
+          'Hardwired Upgrade Kit',
+          'Hardwired Communication Module',
+          'Wireless Upgrade Kit',
+          'Wireless Communication Module Cover',
+          'Wireless Communication Module',
+          'Battery Holder and Cover Kit',
+          'Battery Holder Kit',
+          'Interior Cover Hardware Kit',
+          'Interior Main Board',
+          'Wiring Harness (Interior Main Board to Exterior Board)',
+          'Rex Switch',
+          'Request-To-Exit Switch Kit',
+          'Motor Drive Assembly',
+        ],
+      },
+    ],
   },
 ]
 
@@ -107,47 +171,44 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Product Categories */}
+      {/* Product Catalog */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">What We Offer</span>
+            <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Full Catalog</span>
             <h2 className="font-display text-3xl md:text-4xl text-gray-900 uppercase tracking-wider mb-4">Product Categories</h2>
             <div className="w-16 h-px bg-electric-blue mx-auto" />
           </div>
 
           <div className="space-y-16">
-            {categories.map((cat, i) => (
-              <div
-                key={cat.title}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 flex items-center justify-center bg-electric-blue/10 text-electric-blue">
-                      {cat.icon}
-                    </div>
-                    <h3 className="font-display text-gray-900 text-xl uppercase tracking-wider">{cat.title}</h3>
+            {catalog.map((section) => (
+              <div key={section.category} className="border border-gray-100 rounded-lg overflow-hidden">
+                {/* Section header */}
+                <div className="flex items-center gap-4 px-6 py-5 bg-gray-50 border-b border-gray-100">
+                  <div className="w-10 h-10 flex items-center justify-center bg-electric-blue/10 text-electric-blue flex-shrink-0">
+                    {section.icon}
                   </div>
-                  <p className="text-steel-silver leading-relaxed mb-5">{cat.desc}</p>
-                  <ul className="space-y-2">
-                    {cat.features.map((f) => (
-                      <li key={f} className="flex items-center gap-3 text-gray-700 text-sm">
-                        <div className="w-1.5 h-1.5 bg-electric-cyan rounded-full flex-shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="font-display text-gray-900 text-lg uppercase tracking-wider">{section.category}</h3>
                 </div>
-                <div className={`relative overflow-hidden rounded ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <Image
-                    src={cat.image}
-                    alt={cat.title}
-                    width={600}
-                    height={380}
-                    className="object-cover w-full h-64 lg:h-80"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+
+                {/* Two-column product groups */}
+                <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                  {section.groups.map((group) => (
+                    <div key={group.heading} className="p-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-1 h-4 bg-electric-blue flex-shrink-0" />
+                        <h4 className="font-display text-gray-700 text-xs uppercase tracking-[0.25em]">{group.heading}</h4>
+                      </div>
+                      <ul className="space-y-2">
+                        {group.items.map((item) => (
+                          <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600">
+                            <div className="w-1.5 h-1.5 bg-electric-cyan rounded-full flex-shrink-0 mt-1.5" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}

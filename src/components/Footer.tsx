@@ -1,8 +1,7 @@
 import Link from 'next/link'
 
 const serviceAreas = ['Florida', 'Michigan', 'Illinois', 'Missouri', 'Indiana', 'Ohio']
-const services = ['Access Control Consulting', 'K-12 Security', 'System Integration', 'Training & Support', 'Compliance Assessment']
-const company = ['About Us', 'Services', 'Industries', 'Case Studies', 'Blog']
+const company = ['About Us', 'Industries', 'Case Studies', 'Blog']
 
 export default function Footer() {
   return (
@@ -11,7 +10,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-grid bg-grid opacity-30 pointer-events-none" />
 
       <div className="relative container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -40,21 +39,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-display text-gray-900 text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Services</h4>
-            <ul className="space-y-3">
-              {services.map((s) => (
-                <li key={s}>
-                  <Link href="/services" className="text-steel-silver text-sm hover:text-electric-blue transition-colors flex items-center gap-2">
-                    <span className="w-1 h-1 bg-electric-blue/50 rounded-full" />
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Company */}
           <div>
             <h4 className="font-display text-gray-900 text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Company</h4>
@@ -74,7 +58,11 @@ export default function Footer() {
             <h4 className="font-display text-gray-900 text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Contact</h4>
             <div className="space-y-4 text-sm text-steel-silver">
               <p>Serving K-12 institutions across 6 states</p>
-              <Link href="/contact" className="block hover:text-electric-blue transition-colors">info@soulardtech.com</Link>
+              <div className="space-y-1">
+                <a href="mailto:greg.hodge@soulardtechnology.net" className="block hover:text-electric-blue transition-colors">greg.hodge@soulardtechnology.net</a>
+                <a href="mailto:taylor.hodge@soulardtechnology.net" className="block hover:text-electric-blue transition-colors">taylor.hodge@soulardtechnology.net</a>
+              </div>
+              <a href="tel:866-404-5519" className="block hover:text-electric-blue transition-colors">866-404-5519</a>
               <Link
                 href="/contact"
                 className="inline-block mt-4 px-5 py-2.5 border border-electric-blue/50 text-electric-blue text-xs uppercase tracking-widest hover:bg-electric-blue/10 transition-colors"

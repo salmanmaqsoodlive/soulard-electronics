@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -7,81 +6,94 @@ import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Manufacturers | Soulard Technology',
-  description: 'We partner with the industry\'s leading access control manufacturers — Lenel, Software House, Genetec, HID, Axis, Allegion, and more.',
+  description: 'Soulard Technology partners with Allegion (Schlage) and HID Global — the industry leaders in access control hardware, credentials, and readers.',
 }
 
 const manufacturers = [
   {
-    name: 'Lenel S2',
-    category: 'Access Control Platform',
-    desc: 'A Carrier company and global leader in enterprise access control. Lenel\'s OnGuard platform powers some of the most demanding deployments worldwide, offering deep integration, scalability, and a rich ecosystem of partners.',
-    products: ['OnGuard Access Control', 'Lenel Velocity', 'LenelS2 NetBox', 'BlueDiamond Mobile'],
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
-    color: 'bg-blue-50 border-blue-200',
-    accentColor: 'text-blue-700',
-  },
-  {
-    name: 'Software House',
-    category: 'Enterprise Access Control',
-    desc: 'Owned by Tyco (Johnson Controls), Software House\'s CCURE 9000 is an enterprise-class security and event management platform trusted by hospitals, universities, and government facilities.',
-    products: ['CCURE 9000', 'iSTAR Controllers', 'C•CURE Access Control', 'Victor Video Management'],
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-    color: 'bg-gray-50 border-gray-200',
-    accentColor: 'text-gray-700',
-  },
-  {
-    name: 'Genetec',
-    category: 'Unified Security Platform',
-    desc: 'Genetec\'s Security Center is an open and unified platform that combines access control, video surveillance, automatic license plate recognition, and communications.',
-    products: ['Security Center', 'Synergis Access Control', 'AutoVu ALPR', 'Mission Control'],
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    color: 'bg-green-50 border-green-200',
-    accentColor: 'text-green-700',
+    name: 'Allegion / Schlage',
+    category: 'Door Hardware & Locking',
+    desc: 'Allegion is a global pioneer in safety and security, with Schlage as its flagship brand. From wireless tubular locks to fully networked hardwired exit trim, Allegion delivers the physical locking infrastructure that anchors every access control deployment. Soulard Technology specifies Allegion hardware across K-12 facilities for its reliability, deep wireless capability, and seamless integration with electronic access platforms.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
+        <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" strokeWidth="1.5"/>
+        <circle cx="12" cy="16" r="1" fill="currentColor"/>
+      </svg>
+    ),
+    groups: [
+      {
+        heading: 'Wireless Locks',
+        items: [
+          'Schlage XE360 Series Wireless Tubular Lock',
+          'Schlage XE360 Wireless Mortise Lock',
+          'Schlage XE360 Wireless Exit Wide Stile Lock',
+          'Schlage LE Mobile Enabled Wireless Lock',
+          'Schlage NDEB Mobile Enabled Wireless Lock',
+          'Schlage AD-400 Networked Wireless Cylindrical Lock',
+          'Schlage AD-400 Networked Wireless Mortise Lock',
+          'Schlage AD-400 Networked Wireless Exit Trim',
+        ],
+      },
+      {
+        heading: 'Hardwired & Standalone Locks',
+        items: [
+          'Schlage Control Mobile Enabled Smart Interconnected Lock',
+          'Schlage Control Mobile Enabled Smart Deadbolt',
+          'Schlage AD-300 Networked Hardwired Cylindrical Lock',
+          'Schlage AD-300 Networked Hardwired Mortise Lock',
+          'Schlage AD-300 Networked Hardwired Exit Trim',
+          'Schlage AD-200 Standalone; Rights on Lock',
+          'Schlage AD-250 Standalone; Rights on Card',
+        ],
+      },
+      {
+        heading: 'Lock Parts & Accessories',
+        items: [
+          'Reader Modules (KP, MS, MSK, MT/SI, MTK/SIK/FMK, DT)',
+          'Interior & Exterior Escutcheons',
+          'Interior & Exterior Baseplates and Subassemblies',
+          'Spring Cages (Interior & Exterior)',
+          'Latches & Levers',
+          'Spindle and Hub Kit / Spindle Spring',
+          'Communication Modules (Hardwired & Wireless)',
+          'Upgrade Kits (Hardwired & Wireless)',
+          'Battery Holder Kits',
+          'Wiring Harness, Rex Switch, Motor Drive Assembly',
+        ],
+      },
+    ],
   },
   {
     name: 'HID Global',
     category: 'Credentials & Readers',
-    desc: 'The world\'s leading provider of trusted identity solutions. HID supplies the readers, cards, and mobile credentials that authenticate people at millions of doors globally.',
-    products: ['iCLASS SE Readers', 'Signo Readers', 'Mobile Access', 'Seos Credentials'],
-    image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80',
-    color: 'bg-orange-50 border-orange-200',
-    accentColor: 'text-orange-700',
-  },
-  {
-    name: 'Axis Communications',
-    category: 'Network Video & Intercoms',
-    desc: 'Axis pioneered network video and continues to lead in IP cameras, video intercoms, and network audio — essential for perimeter monitoring and entry management at K-12 campuses.',
-    products: ['IP Video Intercoms', 'Network Cameras', 'Door Controllers', 'Network Audio'],
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80',
-    color: 'bg-red-50 border-red-200',
-    accentColor: 'text-red-700',
-  },
-  {
-    name: 'Allegion',
-    category: 'Door Hardware & Locking',
-    desc: 'Home to Schlage, Von Duprin, and LCN — Allegion delivers the physical door hardware that interfaces with electronic access control, from electrified panic hardware to electronic locks.',
-    products: ['Schlage Electronic Locks', 'Von Duprin Panic Hardware', 'LCN Door Closers', 'AD Series Networked Locks'],
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
-    color: 'bg-yellow-50 border-yellow-200',
-    accentColor: 'text-yellow-700',
-  },
-  {
-    name: 'ASSA ABLOY',
-    category: 'Door Opening Solutions',
-    desc: 'The global leader in door opening solutions. ASSA ABLOY\'s portfolio includes Yale, Corbin Russwin, Sargent, and Aperio — covering everything from mechanical hardware to wireless locking.',
-    products: ['Yale Electronic Locks', 'Aperio Wireless', 'Sargent Locks', 'CLIQ Remote Access'],
-    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80',
-    color: 'bg-purple-50 border-purple-200',
-    accentColor: 'text-purple-700',
-  },
-  {
-    name: 'Bosch Security',
-    category: 'Integrated Security Systems',
-    desc: 'Bosch delivers access control, intrusion detection, and video surveillance in a tightly integrated ecosystem — ideal for districts that want a single-vendor infrastructure.',
-    products: ['Access Professional Edition', 'B Series Intrusion Panels', 'FLEXIDOME Cameras', 'Video Management System'],
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-    color: 'bg-teal-50 border-teal-200',
-    accentColor: 'text-teal-700',
+    desc: "HID Global is the world's leading provider of trusted identity solutions. Their readers and credentials are the front line of access control — the point where a person proves who they are. Soulard Technology deploys HID products for their unmatched interoperability, longevity in the field, and support for the full spectrum of credential technologies from legacy proximity through to mobile and FIPS201-compliant smart cards.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
+        <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M2 10h20" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M6 15h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+    groups: [
+      {
+        heading: 'Readers',
+        items: [
+          'Mobile-Enabled Multi-Technology Readers',
+          'Proximity and Magstripe Readers',
+          'FIPS201 Compliant Readers',
+        ],
+      },
+      {
+        heading: 'Credentials',
+        items: [
+          'Proximity & Smart Technology Cards',
+          'Proximity & Smart Technology Key Fobs',
+          'Proximity Tag Stickers',
+          'Non-Technology Cards',
+        ],
+      },
+    ],
   },
 ]
 
@@ -93,29 +105,20 @@ export default function Manufacturers() {
       <PageHero
         eyebrow="Our Partners"
         title="Manufacturers"
-        subtitle="We work with the industry's most trusted manufacturers — giving you access to best-in-class technology with unbiased, expert guidance."
+        subtitle="We partner with Allegion and HID Global — two of the most trusted names in access control hardware, credentials, and readers."
         image="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
       />
 
-      {/* Intro */}
-      <section className="py-12 bg-gray-50 border-b border-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[
-              { label: 'Manufacturer Partners', value: '8+' },
-              { label: 'Product Lines', value: '40+' },
-              { label: 'Years of Partnerships', value: '15+' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="font-display text-4xl text-electric-cyan mb-2">{stat.value}</div>
-                <div className="text-steel-silver text-sm tracking-wide">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+      {/* Intro strip */}
+      <section className="py-12 bg-electric-blue">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-white text-lg font-body max-w-3xl mx-auto leading-relaxed">
+            Soulard Technology is manufacturer-agnostic. We recommend Allegion and HID products because they consistently deliver the best outcomes for K-12 institutions — not because of vendor agreements.
+          </p>
         </div>
       </section>
 
-      {/* Manufacturer Cards */}
+      {/* Manufacturer Sections */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -124,34 +127,39 @@ export default function Manufacturers() {
             <div className="w-16 h-px bg-electric-blue mx-auto" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-16">
             {manufacturers.map((mfr) => (
-              <div key={mfr.name} className="border border-gray-100 hover:border-electric-blue/30 hover:shadow-lg transition-all overflow-hidden group">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={mfr.image}
-                    alt={mfr.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-4">
-                    <span className="font-display text-xs text-electric-cyan tracking-widest uppercase">{mfr.category}</span>
-                    <h3 className="font-display text-white text-2xl uppercase tracking-wider">{mfr.name}</h3>
+              <div key={mfr.name} className="border border-gray-100 rounded-lg overflow-hidden">
+                {/* Header */}
+                <div className="flex items-start gap-5 px-6 py-6 bg-gray-50 border-b border-gray-100">
+                  <div className="w-12 h-12 flex items-center justify-center bg-electric-blue/10 text-electric-blue flex-shrink-0">
+                    {mfr.icon}
+                  </div>
+                  <div>
+                    <span className="font-display text-electric-cyan text-xs tracking-[0.3em] uppercase">{mfr.category}</span>
+                    <h3 className="font-display text-gray-900 text-2xl uppercase tracking-wider mt-0.5">{mfr.name}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-3 max-w-3xl">{mfr.desc}</p>
                   </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-steel-silver text-sm leading-relaxed mb-4">{mfr.desc}</p>
-                  <div>
-                    <span className="font-display text-xs text-gray-400 uppercase tracking-widest block mb-2">Key Products</span>
-                    <div className="flex flex-wrap gap-2">
-                      {mfr.products.map((p) => (
-                        <span key={p} className="text-xs px-3 py-1 border border-electric-blue/20 text-electric-blue bg-electric-blue/5">
-                          {p}
-                        </span>
-                      ))}
+
+                {/* Product groups */}
+                <div className={`grid grid-cols-1 divide-y md:divide-y-0 md:divide-x divide-gray-100 ${mfr.groups.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
+                  {mfr.groups.map((group) => (
+                    <div key={group.heading} className="p-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-1 h-4 bg-electric-blue flex-shrink-0" />
+                        <h4 className="font-display text-gray-700 text-xs uppercase tracking-[0.25em]">{group.heading}</h4>
+                      </div>
+                      <ul className="space-y-2">
+                        {group.items.map((item) => (
+                          <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600">
+                            <div className="w-1.5 h-1.5 bg-electric-cyan rounded-full flex-shrink-0 mt-1.5" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             ))}
@@ -164,10 +172,10 @@ export default function Manufacturers() {
         <div className="container mx-auto px-6 max-w-4xl text-center">
           <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Our Approach</span>
           <h2 className="font-display text-3xl text-gray-900 uppercase tracking-wider mb-6">Manufacturer-Agnostic Consulting</h2>
-          <p className="text-steel-silver leading-relaxed mb-6 text-lg">
+          <p className="text-gray-600 leading-relaxed mb-6 text-lg">
             We are not a reseller or a manufacturer's rep. We earn no commissions or bonuses for recommending one brand over another. Our only obligation is to you — the school district — and to finding the solution that best fits your needs and budget.
           </p>
-          <p className="text-steel-silver leading-relaxed mb-10">
+          <p className="text-gray-600 leading-relaxed mb-10">
             This independence allows us to mix and match products from different manufacturers, leverage your existing infrastructure investments, and negotiate from a position of knowledge on your behalf.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-electric-blue text-white font-display uppercase tracking-widest text-sm hover:bg-electric-blue/90 transition-all shadow-neon-blue">

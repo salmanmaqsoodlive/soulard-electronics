@@ -35,7 +35,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? 'bg-white/95 backdrop-blur-xl border-b border-electric-blue/20 shadow-sm py-3'
-            : 'bg-transparent py-5'
+            : 'bg-white/80 backdrop-blur-sm py-5'
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
@@ -51,7 +51,7 @@ export default function Navbar() {
               </svg>
             </div>
             <div>
-              <span className={`font-display text-lg tracking-widest uppercase transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>SOULARD</span>
+              <span className="font-display text-lg tracking-widest uppercase text-gray-900">SOULARD</span>
               <span className="font-display text-electric-blue text-xs block tracking-[0.3em] uppercase -mt-1">Technology</span>
             </div>
           </Link>
@@ -65,9 +65,7 @@ export default function Navbar() {
                 className={`relative px-3 py-2 font-body text-sm font-medium tracking-wide transition-colors group ${
                   pathname === link.href
                     ? 'text-electric-blue'
-                    : scrolled
-                    ? 'text-gray-600 hover:text-gray-900'
-                    : 'text-gray-300 hover:text-white'
+                    : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 {link.label}
@@ -84,11 +82,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="/contact"
-              className={`relative px-6 py-2.5 text-sm font-medium font-body overflow-hidden group border rounded transition-colors ${
-                scrolled
-                  ? 'border-electric-blue text-electric-blue hover:bg-electric-blue/10'
-                  : 'border-white/40 text-white hover:border-electric-blue/70 hover:text-electric-blue'
-              }`}
+              className="relative px-6 py-2.5 text-sm font-medium font-body overflow-hidden group border rounded transition-colors border-electric-blue text-electric-blue hover:bg-electric-blue/10"
             >
               <span className="relative z-10 tracking-wider uppercase text-xs">Get Consultation</span>
             </Link>
@@ -102,15 +96,15 @@ export default function Navbar() {
           >
             <motion.span
               animate={menuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-              className={`w-6 h-0.5 block transition-colors ${scrolled ? 'bg-electric-blue' : 'bg-white'}`}
+              className="w-6 h-0.5 block transition-colors bg-electric-blue"
             />
             <motion.span
               animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className={`w-6 h-0.5 block ${scrolled ? 'bg-gray-500' : 'bg-gray-300'}`}
+              className="w-6 h-0.5 block bg-gray-500"
             />
             <motion.span
               animate={menuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-              className={`w-6 h-0.5 block transition-colors ${scrolled ? 'bg-electric-blue' : 'bg-white'}`}
+              className="w-6 h-0.5 block transition-colors bg-electric-blue"
             />
           </button>
         </div>

@@ -47,15 +47,15 @@ export default function CaseStudies() {
     <main className="bg-navy min-h-screen">
       <Navbar />
 
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-30" />
+      <section className="relative pt-32 pb-16 overflow-hidden bg-white">
+        <div className="absolute inset-0 bg-grid opacity-60" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-10 bg-electric-cyan" />
             <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase">Real Implementations</span>
           </div>
-          <h1 className="font-display text-5xl md:text-7xl text-white uppercase tracking-wider mb-4">Case Studies</h1>
-          <p className="text-steel-silver text-lg max-w-2xl">
+          <h1 className="font-display text-5xl md:text-7xl text-gray-900 uppercase tracking-wider mb-4">Case Studies</h1>
+          <p className="text-gray-600 text-lg max-w-2xl">
             How K-12 districts across six states have modernized their security infrastructure with Soulard Technology.
           </p>
         </div>

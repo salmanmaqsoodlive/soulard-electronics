@@ -36,71 +36,6 @@ const stats = [
   { value: 98, suffix: '%', label: 'Client Satisfaction', icon: '⭐' },
 ]
 
-const services = [
-  {
-    title: 'Access Control Design',
-    description: 'Custom electronic access control system design tailored for K-12 facilities, budgets, and safety requirements.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" strokeWidth="1.5"/>
-        <circle cx="12" cy="16" r="1" fill="currentColor"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Security Consulting',
-    description: 'Expert guidance on security management systems, platform selection, and implementation strategy.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'System Integration',
-    description: 'Seamless integration of access control with existing security infrastructure and building systems.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Training & Support',
-    description: 'Comprehensive training programs for administrators, security personnel, and technical staff.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M12 20h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" strokeWidth="1.5"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Compliance Assessment',
-    description: 'Security audits and compliance reviews to meet state, federal, and district safety requirements.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="currentColor" strokeWidth="1.5"/>
-        <rect x="9" y="3" width="6" height="4" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Budget Optimization',
-    description: 'Strategic planning to maximize security effectiveness while staying within institutional budgets.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-]
-
 const serviceAreas = ['Florida', 'Michigan', 'Illinois', 'Missouri', 'Indiana', 'Ohio']
 
 export default function Home() {
@@ -117,31 +52,30 @@ export default function Home() {
       <Navbar />
 
       {/* HERO */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-white">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
             alt="Security system"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-5"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-700/95 to-navy-600/90" />
         </div>
 
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 z-[1] opacity-40"
+          className="absolute inset-0 z-[1] opacity-60"
           style={{
-            backgroundImage: 'linear-gradient(rgba(220,38,38,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(220,38,38,0.06) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(220,38,38,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(220,38,38,0.04) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
 
         {/* Animated glow orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-blue/10 rounded-full blur-3xl animate-pulse-slow z-[1]" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-electric-cyan/8 rounded-full blur-3xl animate-pulse-slow z-[1]" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-blue/5 rounded-full blur-3xl animate-pulse-slow z-[1]" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-electric-cyan/5 rounded-full blur-3xl animate-pulse-slow z-[1]" style={{ animationDelay: '2s' }} />
 
         {/* Content */}
         <div className="relative z-[2] container mx-auto px-6 pt-32">
@@ -161,7 +95,7 @@ export default function Home() {
                 initial={{ y: 100 }}
                 animate={heroLoaded ? { y: 0 } : {}}
                 transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-                className="font-display text-6xl sm:text-7xl md:text-8xl text-white uppercase leading-tight tracking-wider"
+                className="font-display text-6xl sm:text-7xl md:text-8xl text-gray-900 uppercase leading-tight tracking-wider"
               >
                 Securing
               </motion.h1>
@@ -181,7 +115,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={heroLoaded ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-steel-silver text-lg md:text-xl max-w-2xl leading-relaxed mb-10"
+              className="text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed mb-10"
             >
               Advanced electronic access control consulting and security management systems for K-12 education institutions across Florida, Michigan, Illinois, Missouri, Indiana, and Ohio.
             </motion.p>
@@ -201,12 +135,6 @@ export default function Home() {
                   <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-600 hover:text-gray-900 hover:border-electric-blue/60 font-body font-medium text-sm uppercase tracking-widest transition-all"
-              >
-                View Services
-              </Link>
             </motion.div>
           </div>
 
@@ -220,7 +148,7 @@ export default function Home() {
             {serviceAreas.map((state, i) => (
               <span
                 key={state}
-                className="px-4 py-1.5 border border-electric-blue/20 text-electric-cyan/70 text-xs font-display tracking-[0.2em] uppercase"
+                className="px-4 py-1.5 border border-electric-blue/30 text-electric-blue text-xs font-display tracking-[0.2em] uppercase"
               >
                 {state}
               </span>
@@ -235,11 +163,11 @@ export default function Home() {
           transition={{ delay: 1.5 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-2"
         >
-          <span className="font-display text-electric-cyan/40 text-xs tracking-widest uppercase">Scroll</span>
+          <span className="font-display text-gray-400 text-xs tracking-widest uppercase">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-px h-8 bg-gradient-to-b from-electric-cyan/40 to-transparent"
+            className="w-px h-8 bg-gradient-to-b from-gray-400 to-transparent"
           />
         </motion.div>
       </section>
@@ -269,43 +197,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="py-24 bg-white relative">
+      {/* INVENTORY / SHIPPING / PARTS */}
+      <section className="py-20 bg-white relative">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-16"
-          >
-            <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">What We Do</span>
-            <h2 className="font-display text-4xl md:text-5xl text-gray-900 uppercase tracking-wider mb-4">
-              Our Services
-            </h2>
-            <div className="w-16 h-px bg-electric-blue mx-auto" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                heading: 'Inventory',
+                description: 'Large inventory, same-day shipping and technical support.',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
+                    <rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M12 12v4M10 14h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                ),
+              },
+              {
+                heading: 'Quick Shipping',
+                description: 'With the most products on the shelf and UPS delivery in 1–2 days, we eliminate unnecessary delays on your project.',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
+                    <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <circle cx="5.5" cy="18.5" r="1.5" stroke="currentColor" strokeWidth="1.5"/>
+                    <circle cx="18.5" cy="18.5" r="1.5" stroke="currentColor" strokeWidth="1.5"/>
+                  </svg>
+                ),
+              },
+              {
+                heading: 'Parts',
+                description: 'Whatever part, component, or accessory you need — if we don\'t stock it, we can typically get it to you in 1–2 days.',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
+                    <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+              },
+            ].map((item, i) => (
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 50 }}
+                key={item.heading}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(204,0,0,0.12)' }}
-                className="glass p-7 rounded cursor-pointer group"
+                className="flex flex-col items-start p-8 border border-gray-100 hover:border-electric-blue/30 hover:shadow-md transition-all"
               >
-                <div className="w-12 h-12 flex items-center justify-center bg-electric-blue/10 text-electric-cyan mb-5 group-hover:bg-electric-blue/20 transition-colors">
-                  {service.icon}
+                <div className="w-14 h-14 flex items-center justify-center bg-electric-blue/10 text-electric-blue mb-6">
+                  {item.icon}
                 </div>
-                <h3 className="font-display text-gray-900 text-lg uppercase tracking-wider mb-3">{service.title}</h3>
-                <p className="font-body text-steel-silver text-sm leading-relaxed">{service.description}</p>
-                <div className="mt-5 flex items-center gap-2 text-electric-cyan/0 group-hover:text-electric-cyan/80 transition-colors text-xs font-display tracking-widest uppercase">
-                  <span>Learn More</span>
-                  <svg viewBox="0 0 24 24" fill="none" className="w-3 h-3"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2"/></svg>
-                </div>
+                <h3 className="font-display text-gray-900 text-lg uppercase tracking-wider mb-3">{item.heading}</h3>
+                <p className="font-body text-gray-600 text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
