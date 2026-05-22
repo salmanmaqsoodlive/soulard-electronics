@@ -13,7 +13,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, children }: 
     <section className="relative pt-32 pb-20 overflow-hidden bg-white">
       {image && (
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-5"
+          className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${image})` }}
         />
       )}
