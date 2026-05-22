@@ -3,149 +3,178 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
+import ProductCard from '@/components/ProductCard'
 
 export const metadata: Metadata = {
-  title: 'Products | Soulard Technology',
-  description: 'Electronic access control products for K-12 schools — credentials, readers, Allegion locks, and system components.',
+  title: 'Products | Soulard Electronic Security Products',
+  description: 'Electronic security products and commercial door hardware — credentials, readers, locks, exit devices, door closers, cables, and more.',
 }
 
 const catalog = [
   {
-    category: 'Credentials & Readers',
+    id: 'credentials',
+    title: 'Credentials',
+    image: '/product-access-control.webp',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
         <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M2 10h20" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M6 15h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M2 10h20M6 15h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
-    groups: [
-      {
-        heading: 'Credentials (Schlage & HID)',
-        items: [
-          'Proximity & Smart Technology Cards',
-          'Proximity & Smart Technology Key Fobs',
-          'Proximity Tag Stickers',
-          'Non-Technology Cards',
-        ],
-      },
-      {
-        heading: 'Readers (Schlage & HID)',
-        items: [
-          'Mobile-Enabled Multi-Technology Readers',
-          'Proximity and Magstripe Readers',
-          'FIPS201 Compliant Readers',
-        ],
-      },
+    items: [
+      'Proximity & Smart Technology Cards',
+      'Proximity & Smart Technology Key Fobs',
+      'Proximity Tag Stickers',
+      'Non-Technology Cards',
     ],
   },
   {
-    category: 'Allegion Hardwired / Wireless Locks',
+    id: 'id-card-printers',
+    title: 'ID Card Printer & Supplies',
+    image: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600&q=80',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+        <rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 12v4M10 14h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+    items: [
+      'Single Sided Printers',
+      'Dual Sided Printers',
+      'Ribbons & Other Badging Supplies',
+    ],
+  },
+  {
+    id: 'readers',
+    title: 'Readers',
+    image: 'https://amag.com/wp-content/uploads/2026/01/Red-Grp-Gray-Footer-1024x639.jpg',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+        <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+    items: [
+      'Mobile-Enabled Multi-Technology Readers',
+      'Multi-Technology Readers',
+      'Proximity and Magstripe Readers',
+      'FIPS201 Compliant Readers',
+      'MT20 Multi-Technology Enrollment Reader',
+    ],
+  },
+  {
+    id: 'electromechanical',
+    title: 'Electromechanical Solutions',
+    image: '/product-locks.webp',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
         <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" strokeWidth="1.5"/>
         <circle cx="12" cy="16" r="1" fill="currentColor"/>
       </svg>
     ),
-    groups: [
-      {
-        heading: 'Allegion Hardwired / Wireless Locks',
-        items: [
-          'Schlage XE360 Series Wireless Tubular Lock',
-          'Schlage XE360 Wireless Mortise Lock',
-          'Schlage XE360 Wireless Exit Wide Stile Lock',
-          'Schlage Control Mobile Enabled Smart Interconnected Lock',
-          'Schlage Control Mobile Enabled Smart Deadbolt',
-          'Schlage LE Mobile Enabled Wireless Lock',
-          'Schlage NDEB Mobile Enabled Wireless Lock',
-          'Schlage AD-300 Networked Hardwired Cylindrical Lock',
-          'Schlage AD-300 Networked Hardwired Mortise Lock',
-          'Schlage AD-300 Networked Hardwired Exit Trim',
-          'Schlage AD-400 Networked Wireless Cylindrical Lock',
-          'Schlage AD-400 Networked Wireless Mortise Lock',
-          'Schlage AD-400 Networked Wireless Exit Trim',
-          'Schlage AD-200 Standalone; Rights on Lock',
-          'Schlage AD-250 Standalone; Rights on Card',
-        ],
-      },
-      {
-        heading: 'Allegion AD Hardwired and Wireless Lock Parts',
-        items: [
-          'Reader Modules (KP, MS, MSK, MT/SI, MTK/SIK/FMK, DT)',
-          'Magnetic Swipe Cleaning Cards',
-          'Interior Escutcheon',
-          'Interior Baseplate Gasket',
-          'USB Cover Plug',
-          'Cable, USB, AD/CO, Exit',
-          'Exterior Escutcheon',
-          'Exterior Gasket Kit',
-          'Interior Baseplate Subassembly',
-          'Exterior Baseplate Subassembly',
-          'Interior Spring Cage',
-          'Exterior Spring Cage',
-          'Latches',
-          'Exterior Lever (less cylinder)',
-          'Interior Lever',
-          'Spindle and Hub Kit',
-        ],
-      },
+    items: [
+      'Electrified Mortise Locks',
+      'Electrified Cylindrical Locks',
+      'Electric Latch Retraction Kits',
+      'Electrified Exit Trim Breakaway Lever Trim',
+      'Delayed Egress/Alarm Kits',
     ],
   },
   {
-    category: 'System Components',
+    id: 'system-components',
+    title: 'System Components',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
         <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
-    groups: [
-      {
-        heading: 'System Components',
-        items: [
-          'Electric Strikes',
-          'Power Supplies',
-          'Key Switches',
-          'Request-to-Exit Bars',
-          'Electric Hinge',
-          'Monitoring Stations and Consoles',
-          'Door Position Switches',
-          'Magnetic Locks',
-          'Magnetic Hold Opens',
-          'Push Buttons',
-          'Lockdown Buttons',
-          'Electric Power Transfers',
-          'Armored Door Cords',
-          'Motion Sensors',
-        ],
-      },
-      {
-        heading: 'Parts & Accessories',
-        items: [
-          'Spindle Spring',
-          'Deadbolt Thumb Turn Assembly',
-          'IPB Retrofit Kit Module',
-          'Strike Faceplates and Armor Fronts',
-          'Door Position Switch',
-          'Door Thickness Kit',
-          'Decorative Plates',
-          'Offline/Hardwired Communication Module Cover',
-          'Hardwired Upgrade Kit',
-          'Hardwired Communication Module',
-          'Wireless Upgrade Kit',
-          'Wireless Communication Module Cover',
-          'Wireless Communication Module',
-          'Battery Holder and Cover Kit',
-          'Battery Holder Kit',
-          'Interior Cover Hardware Kit',
-          'Interior Main Board',
-          'Wiring Harness (Interior Main Board to Exterior Board)',
-          'Rex Switch',
-          'Request-To-Exit Switch Kit',
-          'Motor Drive Assembly',
-        ],
-      },
+    items: [
+      'Electric Strikes',
+      'Power Supplies',
+      'Key Switches',
+      'Request-to-Exit Bars',
+      'Electric Hinge',
+      'Monitoring Stations and Consoles',
+      'Door Position Switches',
+      'Magnetic Locks',
+      'Push Buttons',
+      'Lockdown Buttons',
+      'Electric Power Transfer',
+      'Armored Door Cords',
+      'Motion Sensors',
+    ],
+  },
+  {
+    id: 'networking-locking',
+    title: 'Networking & Standalone Locking Solutions',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+        <path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    items: [
+      'Smart Control Deadbolts',
+      'Standalone Electronic Locks and Exit Trims',
+      'Networked Electronic Hardwired Locks and Exit Trims',
+      'Networked Electronic Wireless Locks and Exit Trims',
+      'Network Wireless Elevator and Gate Kits',
+      'Networked Wireless 2-Door PIM (Panel Interface Module)',
+      'Networked Wireless 16-Door PIM (Panel Interface Module)',
+    ],
+  },
+  {
+    id: 'security-communication',
+    title: 'Security Communication Solutions',
+    image: '/product-other.webp',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+        <path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.899L15 14M3 8h12a2 2 0 012 2v4a2 2 0 01-2 2H3a2 2 0 01-2-2v-4a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    items: [
+      'Aiphone Video/Intercom Systems',
+    ],
+  },
+  {
+    id: 'cable',
+    title: 'Electronic Access & Security Cable',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+        <path d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+    items: [
+      'Cat 6 Cable',
+      'Composite Cable',
+      'Stranded Plenum Shielded Cable',
+      'Stranded Plenum Unshielded Cable',
+      'Stranded Shielded Cable',
+      'Stranded Unshielded Cable',
+      'Stranded Twisted Cable',
+    ],
+  },
+  {
+    id: 'mechanical-hardware',
+    title: 'Mechanical Door Hardware',
+    image: '/product-exit-devices.webp',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+        <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    items: [
+      'Cylindrical & Mortise Locksets',
+      'Exit Devices',
+      'Door Closers',
+      'Overhead Stops',
+      'Magnetic Hold-Opens',
+      'Auto Door Operators',
+      'Parts',
     ],
   },
 ]
@@ -156,61 +185,44 @@ export default function Products() {
       <Navbar />
 
       <PageHero
-        eyebrow="Product Portfolio"
+        eyebrow="Product Catalog"
         title="Products"
-        subtitle="We specify, source, and support the right products for every K-12 security challenge — from a single door to a multi-campus district."
+        subtitle="New and replacement electronic security products and commercial door hardware — all in stock and ready to ship same day."
         image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
       />
 
       {/* Intro strip */}
-      <section className="py-12 bg-electric-blue">
+      <section className="py-10 bg-electric-blue">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white text-lg font-body max-w-3xl mx-auto leading-relaxed">
-            Soulard Technology is manufacturer-agnostic. We recommend products based on your budget, facility layout, and security goals — not on vendor relationships.
+            Large in-stock inventory across 9 product categories. Most orders ship same day via UPS — 1–2 day delivery nationwide from Holland MI, St. Louis MO, and Tampa FL.
           </p>
         </div>
       </section>
 
-      {/* Product Catalog */}
-      <section className="py-20 bg-white">
+      {/* PRODUCT CATALOG — single unified grid */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Full Catalog</span>
-            <h2 className="font-display text-3xl md:text-4xl text-gray-900 uppercase tracking-wider mb-4">Product Categories</h2>
+          <div className="text-center mb-14">
+            <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">
+              What We Stock
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl text-gray-900 uppercase tracking-wider mb-4">
+              Product Categories
+            </h2>
             <div className="w-16 h-px bg-electric-blue mx-auto" />
           </div>
 
-          <div className="space-y-16">
-            {catalog.map((section) => (
-              <div key={section.category} className="border border-gray-100 rounded-lg overflow-hidden">
-                {/* Section header */}
-                <div className="flex items-center gap-4 px-6 py-5 bg-gray-50 border-b border-gray-100">
-                  <div className="w-10 h-10 flex items-center justify-center bg-electric-blue/10 text-electric-blue flex-shrink-0">
-                    {section.icon}
-                  </div>
-                  <h3 className="font-display text-gray-900 text-lg uppercase tracking-wider">{section.category}</h3>
-                </div>
-
-                {/* Two-column product groups */}
-                <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-                  {section.groups.map((group) => (
-                    <div key={group.heading} className="p-6">
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-1 h-4 bg-electric-blue flex-shrink-0" />
-                        <h4 className="font-display text-gray-700 text-xs uppercase tracking-[0.25em]">{group.heading}</h4>
-                      </div>
-                      <ul className="space-y-2">
-                        {group.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600">
-                            <div className="w-1.5 h-1.5 bg-electric-cyan rounded-full flex-shrink-0 mt-1.5" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {catalog.map((cat) => (
+              <ProductCard
+                key={cat.id}
+                id={cat.id}
+                title={cat.title}
+                image={cat.image}
+                icon={cat.icon}
+                items={cat.items}
+              />
             ))}
           </div>
         </div>
@@ -220,16 +232,22 @@ export default function Products() {
       <section className="py-20 bg-navy">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-display text-3xl md:text-4xl text-white uppercase tracking-wider mb-4">
-            Not Sure What You Need?
+            Need a Quote or Availability Check?
           </h2>
           <p className="text-gray-300 text-lg mb-10 max-w-xl mx-auto">
-            We'll conduct a free site assessment and recommend the right products for your facility.
+            Contact us with your part number or product requirement and we&apos;ll get back to you fast.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-electric-blue text-white font-display uppercase tracking-widest text-sm hover:bg-electric-blue/90 transition-all shadow-neon-blue">
-              Request a Free Assessment
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-electric-blue text-white font-display uppercase tracking-widest text-sm hover:bg-electric-blue/90 transition-all shadow-neon-blue"
+            >
+              Request a Quote
             </Link>
-            <Link href="/catalogs" className="inline-flex items-center justify-center gap-3 px-10 py-5 border border-white/30 text-white font-display uppercase tracking-widest text-sm hover:border-electric-cyan/60 transition-all">
+            <Link
+              href="/catalogs"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 border border-white/30 text-white font-display uppercase tracking-widest text-sm hover:border-electric-cyan/60 transition-all"
+            >
               Browse Catalogs
             </Link>
           </div>

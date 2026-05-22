@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import BrandsMarquee from '@/components/BrandsMarquee'
 
-const serviceAreas = ['Florida', 'Michigan', 'Illinois', 'Missouri', 'Indiana', 'Ohio']
-const company = ['About Us', 'Industries', 'Case Studies', 'Blog']
+const locations = ['Holland, MI', 'St. Louis, MO', 'Tampa, FL']
+const company = ['About Us', 'Industries', 'Products', 'Manufacturers']
 
 export default function Footer() {
   return (
+    <>
+    <BrandsMarquee />
     <footer className="bg-navy-800 border-t border-electric-blue/20">
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-grid bg-grid opacity-30 pointer-events-none" />
@@ -24,12 +27,12 @@ export default function Footer() {
               />
             </div>
             <p className="text-steel-silver text-sm leading-relaxed mb-6">
-              Electronic access control consulting and security management systems for K-12 education markets.
+              A stocking resource for end users — new and replacement electronic security products and commercial door hardware. Three locations. Ships nationwide.
             </p>
             <div className="flex flex-wrap gap-2">
-              {serviceAreas.map((state) => (
-                <span key={state} className="text-xs border border-electric-blue/30 text-electric-blue px-2 py-0.5 rounded">
-                  {state}
+              {locations.map((loc) => (
+                <span key={loc} className="text-xs border border-electric-blue/30 text-electric-blue px-2 py-0.5 rounded">
+                  {loc}
                 </span>
               ))}
             </div>
@@ -53,7 +56,7 @@ export default function Footer() {
           <div>
             <h4 className="font-display text-gray-900 text-sm tracking-widest uppercase mb-6 after:block after:w-8 after:h-px after:bg-electric-blue after:mt-2">Contact</h4>
             <div className="space-y-4 text-sm text-steel-silver">
-              <p>Serving K-12 institutions across 6 states</p>
+              <p>Holland, MI &bull; St. Louis, MO &bull; Tampa, FL</p>
               <div className="space-y-1">
                 <a href="mailto:greg.hodge@soulardtechnology.net" className="block hover:text-electric-blue transition-colors">greg.hodge@soulardtechnology.net</a>
                 <a href="mailto:taylor.hodge@soulardtechnology.net" className="block hover:text-electric-blue transition-colors">taylor.hodge@soulardtechnology.net</a>
@@ -63,7 +66,7 @@ export default function Footer() {
                 href="/contact"
                 className="inline-block mt-4 px-5 py-2.5 border border-electric-blue/50 text-electric-blue text-xs uppercase tracking-widest hover:bg-electric-blue/10 transition-colors"
               >
-                Get Consultation
+                Get a Quote
               </Link>
             </div>
           </div>
@@ -72,7 +75,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-electric-blue/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-steel-silver/60 text-xs">
-            © {new Date().getFullYear()} Soulard Technology. All rights reserved.
+            © {new Date().getFullYear()} Soulard Electronic Security Products. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/" className="text-steel-silver/60 text-xs hover:text-electric-blue transition-colors">Privacy Policy</Link>
@@ -81,5 +84,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   )
 }

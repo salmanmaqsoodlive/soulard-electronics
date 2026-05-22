@@ -1,4 +1,4 @@
-// File: /Users/mac/Desktop/robet-websites/soulard-technology/src/app/products/page.tsx
+// File: /Users/mac/Desktop/robet-websites/soulard-electronic/src/app/products/page.tsx
 import * as entry from '../../../../src/app/products/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

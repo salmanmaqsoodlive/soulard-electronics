@@ -6,34 +6,25 @@ import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'About | Soulard Technology',
-  description: 'Learn about Soulard Technology — experienced security consultants specializing in K-12 electronic access control across Florida, Michigan, Illinois, Missouri, Indiana, and Ohio.',
+  title: 'About | Soulard Electronic Security Products',
+  description: 'Learn about Soulard Electronic Security Products — a stocking resource for end users specializing in electronic security products and commercial door hardware.',
 }
 
 const values = [
   {
-    title: 'Security First',
-    desc: 'Student and staff safety drives every recommendation we make.',
+    title: 'In-Stock Ready',
+    desc: 'We maintain a deep inventory so the products you need ship the same day you order — no waiting on back-orders.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Budget Conscious',
-    desc: 'Maximum security impact within your institutional budget constraints.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M12 12v4M10 14h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
   },
   {
     title: 'Fast Fulfillment',
-    desc: 'Large inventory and same-day shipping means your project never stalls waiting on parts.',
+    desc: 'Same-day shipping and UPS delivery in 1–2 days nationwide. Your project timeline never stalls waiting on parts.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
@@ -43,13 +34,21 @@ const values = [
     ),
   },
   {
-    title: 'Partnership',
-    desc: 'Long-term relationships built on trust, transparency, and results.',
+    title: 'Product Expertise',
+    desc: 'Deep technical knowledge of every brand we carry — we help you find the right product for your specific application.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="1.5"/>
-        <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Trusted Brands',
+    desc: 'We stock only the most reliable, field-proven brands — Allegion, Schlage, HID, Von Duprin, LCN, Aiphone, BEA, Vanderbilt, and Locknetics.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -63,8 +62,8 @@ export default function About() {
       <PageHero
         eyebrow="About Us"
         title="Who We Are"
-        subtitle="15+ years of specialized experience delivering access control solutions to K-12 institutions across six states."
-        image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
+        subtitle="A stocking resource for end users — specializing in electronic security products and commercial door hardware from three locations across the U.S."
+        image="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
       />
 
       {/* Story */}
@@ -77,26 +76,26 @@ export default function About() {
                 Our <span className="gradient-text">Mission</span>
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Soulard Technology was founded with a singular purpose: to make enterprise-grade security accessible and affordable for K-12 educational institutions. We recognized that schools were being underserved — either paying too much for complex systems, or settling for inadequate security that put students and staff at risk.
+                Soulard Electronic Security Products was founded with a clear purpose: to be the most reliable stocking resource for contractors, integrators, and end users who need electronic security products and commercial door hardware — fast.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-                We specialize in Allegion (Schlage) locking hardware and HID Global credentials and readers — two of the most trusted names in access control. Our deep product knowledge, combined with a large on-hand inventory and same-day shipping capability, means we can move fast when your district needs it most.
+                We specialize in Allegion (Schlage) locking hardware, HID Global credentials and readers, Von Duprin panic hardware, LCN door closers, Aiphone video intercoms, BEA motion sensors, Vanderbilt access control, and Locknetics electrified products. Our deep product knowledge, combined with a large on-hand inventory and same-day shipping capability, means we move fast when your project demands it.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Today, we proudly serve K-12 institutions across six states — Florida, Michigan, Illinois, Missouri, Indiana, and Ohio — helping districts create safer learning environments without sacrificing their budgets.
+                With stocking locations in Holland, Michigan; St. Louis, Missouri; and Tampa, Florida, we serve contractors and facilities professionals coast to coast with UPS delivery in 1–2 days.
               </p>
             </div>
             <div className="relative">
               <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
-                alt="Security consulting team"
+                src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=900&q=80"
+                alt="Security products warehouse inventory"
                 width={600}
                 height={450}
                 className="object-cover w-full rounded"
               />
               <div className="absolute -bottom-4 -right-4 bg-white shadow-lg border border-electric-blue/20 p-4">
                 <div className="font-display text-electric-cyan text-2xl">15+</div>
-                <div className="text-gray-500 text-xs mt-1">Years Combined Experience</div>
+                <div className="text-gray-500 text-xs mt-1">Years in the Industry</div>
               </div>
             </div>
           </div>
@@ -131,8 +130,8 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative order-2 lg:order-1">
               <Image
-                src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=900&q=80"
-                alt="Security consultant at work"
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80"
+                alt="Electronic security components and hardware"
                 width={600}
                 height={450}
                 className="object-cover w-full rounded"
@@ -141,18 +140,18 @@ export default function About() {
             <div className="order-1 lg:order-2">
               <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Why Choose Us</span>
               <h2 className="font-display text-3xl md:text-4xl text-gray-900 uppercase tracking-wider mb-6">
-                Specialized <span className="gradient-text">Expertise</span>
+                Your Stocking <span className="gradient-text">Partner</span>
               </h2>
               <ul className="space-y-4 mb-8">
                 {[
-                  'Exclusive focus on K-12 security — not a generalist firm',
+                  'Deep in-stock inventory — most orders ship same day',
+                  'UPS delivery nationwide in 1–2 days',
+                  'New and replacement products both available',
                   'Allegion (Schlage) and HID Global product specialists',
-                  'Large inventory with same-day shipping available',
-                  'UPS delivery — most orders arrive in 1–2 days',
-                  'Parts and components sourced within 1–2 days if not in stock',
-                  'Deep knowledge of state compliance requirements',
-                  'Hands-on training for administrators and technical staff',
-                  'Proven track record across 200+ institutions',
+                  'Von Duprin, LCN, Aiphone, BEA, Vanderbilt in stock',
+                  'Parts and components sourced within 1–2 days if not stocked',
+                  'Three stocking locations: Holland MI, St. Louis MO, Tampa FL',
+                  'Expert product knowledge and application support',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
                     <div className="w-1.5 h-1.5 bg-electric-cyan rounded-full flex-shrink-0 mt-1.5" />
@@ -164,7 +163,7 @@ export default function About() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-electric-blue text-white font-body font-semibold text-sm uppercase tracking-widest hover:bg-electric-blue/90 transition-all shadow-neon-blue"
               >
-                Schedule a Consultation
+                Get a Quote
                 <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2"/></svg>
               </Link>
             </div>
@@ -172,16 +171,21 @@ export default function About() {
         </div>
       </section>
 
-      {/* Service Areas */}
+      {/* Locations */}
       <section className="py-20 bg-navy">
         <div className="container mx-auto px-6 text-center">
-          <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Coverage</span>
-          <h2 className="font-display text-3xl text-white uppercase tracking-wider mb-4">Service Areas</h2>
-          <p className="text-gray-300 mb-10">Proudly serving K-12 institutions across six states</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {['Florida', 'Michigan', 'Illinois', 'Missouri', 'Indiana', 'Ohio'].map((state) => (
-              <div key={state} className="border border-electric-blue/30 px-8 py-4 hover:border-electric-cyan/60 transition-colors">
-                <div className="font-display text-electric-cyan text-sm uppercase tracking-widest">{state}</div>
+          <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Where We Are</span>
+          <h2 className="font-display text-3xl text-white uppercase tracking-wider mb-4">Our Locations</h2>
+          <p className="text-gray-300 mb-10">Three stocking locations serving contractors and end users across the country</p>
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              { city: 'Holland', state: 'Michigan' },
+              { city: 'St. Louis', state: 'Missouri' },
+              { city: 'Tampa', state: 'Florida' },
+            ].map((loc) => (
+              <div key={loc.city} className="border border-electric-blue/30 px-10 py-6 hover:border-electric-cyan/60 transition-colors">
+                <div className="font-display text-electric-cyan text-lg uppercase tracking-widest">{loc.city}</div>
+                <div className="text-steel-silver text-xs mt-1 uppercase tracking-wider">{loc.state}</div>
               </div>
             ))}
           </div>

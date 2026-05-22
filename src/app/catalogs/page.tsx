@@ -6,69 +6,69 @@ import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Catalogs | Soulard Technology',
-  description: 'Browse product catalogs, spec sheets, and data sheets from our manufacturer partners — all in one place.',
+  title: 'Catalogs | Soulard Electronic Security Products',
+  description: 'Browse product catalogs, spec sheets, and data sheets from our manufacturer partners — Allegion, Schlage, HID, Von Duprin, LCN, Aiphone, BEA, Vanderbilt, and Locknetics.',
 }
 
 const catalogGroups = [
   {
-    manufacturer: 'Lenel S2',
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
-    items: [
-      { title: 'OnGuard Platform Overview', type: 'Product Brochure', pages: 12 },
-      { title: 'LenelS2 NetBox Datasheet', type: 'Data Sheet', pages: 4 },
-      { title: 'BlueDiamond Mobile Access', type: 'Solution Guide', pages: 8 },
-      { title: 'OnGuard Integration Guide', type: 'Technical Guide', pages: 24 },
-    ],
-  },
-  {
-    manufacturer: 'Software House',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
-    items: [
-      { title: 'CCURE 9000 Platform Overview', type: 'Product Brochure', pages: 16 },
-      { title: 'iSTAR Controller Datasheet', type: 'Data Sheet', pages: 6 },
-      { title: 'CCURE K-12 School Solution', type: 'Solution Guide', pages: 10 },
-      { title: 'Victor VMS Integration', type: 'Technical Guide', pages: 18 },
-    ],
-  },
-  {
-    manufacturer: 'Genetec',
+    manufacturer: 'Allegion / Schlage',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
     items: [
-      { title: 'Security Center Overview', type: 'Product Brochure', pages: 14 },
-      { title: 'Synergis Access Control', type: 'Data Sheet', pages: 4 },
-      { title: 'Education Vertical Guide', type: 'Solution Guide', pages: 12 },
-      { title: 'Genetec Mission Control', type: 'Product Brochure', pages: 8 },
+      { title: 'Schlage AD Series Product Catalog', type: 'Product Catalog', pages: 48 },
+      { title: 'Schlage XE360 Wireless Lock Series', type: 'Data Sheet', pages: 8 },
+      { title: 'Schlage Control Smart Lock Series', type: 'Product Brochure', pages: 12 },
+      { title: 'Wireless Lock Specification Guide', type: 'Technical Guide', pages: 22 },
     ],
   },
   {
     manufacturer: 'HID Global',
     image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&q=80',
     items: [
-      { title: 'Signo Reader Series', type: 'Product Brochure', pages: 6 },
-      { title: 'iCLASS SE Platform', type: 'Data Sheet', pages: 8 },
-      { title: 'Mobile Access Overview', type: 'Solution Guide', pages: 10 },
-      { title: 'Credential Technology Guide', type: 'Technical Guide', pages: 20 },
+      { title: 'Signo Reader Series Datasheet', type: 'Data Sheet', pages: 6 },
+      { title: 'iCLASS SE Platform Overview', type: 'Product Brochure', pages: 8 },
+      { title: 'Mobile Access Solution Guide', type: 'Solution Guide', pages: 10 },
+      { title: 'Credential Technology Comparison', type: 'Technical Guide', pages: 20 },
     ],
   },
   {
-    manufacturer: 'Axis Communications',
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&q=80',
+    manufacturer: 'Von Duprin',
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
     items: [
-      { title: 'Axis A8207-VE Network Video Door Station', type: 'Data Sheet', pages: 4 },
-      { title: 'AXIS A1601 Network Door Controller', type: 'Data Sheet', pages: 4 },
-      { title: 'Axis School Security Guide', type: 'Solution Guide', pages: 14 },
-      { title: 'IP Video Intercom Catalog', type: 'Product Catalog', pages: 32 },
+      { title: 'Von Duprin Panic Hardware Catalog', type: 'Product Catalog', pages: 36 },
+      { title: 'Electric Strike Product Guide', type: 'Data Sheet', pages: 8 },
+      { title: 'Electrified Exit Devices Overview', type: 'Product Brochure', pages: 12 },
+      { title: 'Hardware Specification Guide', type: 'Technical Guide', pages: 18 },
     ],
   },
   {
-    manufacturer: 'Allegion',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80',
+    manufacturer: 'LCN',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
     items: [
-      { title: 'Schlage AD Series Catalog', type: 'Product Catalog', pages: 48 },
-      { title: 'Von Duprin Panic Hardware', type: 'Product Catalog', pages: 36 },
-      { title: 'School Security Solutions', type: 'Solution Guide', pages: 16 },
-      { title: 'Wireless Lock Specification Guide', type: 'Technical Guide', pages: 22 },
+      { title: 'LCN Door Closer Product Catalog', type: 'Product Catalog', pages: 32 },
+      { title: 'Electromagnetic Hold-Open Devices', type: 'Data Sheet', pages: 6 },
+      { title: 'Low-Energy Power Operator Guide', type: 'Solution Guide', pages: 10 },
+      { title: 'ADA-Compliant Hardware Guide', type: 'Technical Guide', pages: 14 },
+    ],
+  },
+  {
+    manufacturer: 'Aiphone',
+    image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=600&q=80',
+    items: [
+      { title: 'IX Series IP Video Intercom', type: 'Product Catalog', pages: 24 },
+      { title: 'GT Series Multi-Tenant System', type: 'Product Brochure', pages: 10 },
+      { title: 'JO Series Video Intercom', type: 'Data Sheet', pages: 6 },
+      { title: 'Intercom System Selection Guide', type: 'Technical Guide', pages: 16 },
+    ],
+  },
+  {
+    manufacturer: 'Vanderbilt',
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
+    items: [
+      { title: 'ACT Enterprise Access Control', type: 'Product Brochure', pages: 14 },
+      { title: 'ACT Pro Standalone Controller', type: 'Data Sheet', pages: 4 },
+      { title: 'SMS Access Management Platform', type: 'Solution Guide', pages: 12 },
+      { title: 'Access Control System Design Guide', type: 'Technical Guide', pages: 20 },
     ],
   },
 ]
@@ -83,7 +83,7 @@ export default function Catalogs() {
       <PageHero
         eyebrow="Literature & Downloads"
         title="Catalogs"
-        subtitle="Product catalogs, data sheets, and solution guides from our manufacturer partners — everything you need to specify the right system."
+        subtitle="Product catalogs, data sheets, and solution guides from our manufacturer partners — everything you need to specify and order the right hardware."
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
       />
 

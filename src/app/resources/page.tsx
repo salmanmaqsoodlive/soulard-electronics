@@ -6,98 +6,89 @@ import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Resources | Soulard Technology',
-  description: 'Access control resources for K-12 security professionals — compliance guides, FAQs, training materials, and industry links.',
+  title: 'Resources | Soulard Electronic Security Products',
+  description: 'Electronic security product resources — buyer guides, technical FAQs, installation references, and industry links for contractors and end users.',
 }
-
-const complianceGuides = [
-  { state: 'Florida', code: 'FL', law: 'School Safety Act (SB 7026)', requirements: ['Single point of entry', 'School resource officers', 'Mental health resources', 'Security assessments'], color: 'text-orange-600' },
-  { state: 'Michigan', code: 'MI', law: 'Safe Schools Act (PA 102)', requirements: ['Emergency operations plans', 'Threat assessment teams', 'Security camera requirements', 'Door locking standards'], color: 'text-blue-600' },
-  { state: 'Illinois', code: 'IL', law: 'Safe Schools Act (105 ILCS 128)', requirements: ['School safety drill requirements', 'Crisis intervention training', 'Building security assessments', 'Visitor management systems'], color: 'text-green-600' },
-  { state: 'Missouri', code: 'MO', law: 'School Safety Act (RSMo 160.665)', requirements: ['Safety plans & drills', 'Single point of entry', 'Interoperable communications', 'Annual security audits'], color: 'text-red-600' },
-  { state: 'Indiana', code: 'IN', law: 'School Safety Act (IC 20-26-18.2)', requirements: ['School safety specialist', 'Safety plan requirements', 'Threat assessment teams', 'Reporting requirements'], color: 'text-purple-600' },
-  { state: 'Ohio', code: 'OH', law: 'School Safety & Crisis Plan (ORC 3313.536)', requirements: ['Safety & crisis plans', 'School safety commissions', 'Panic alarm systems', 'Interoperability mandates'], color: 'text-teal-600' },
-]
 
 const guides = [
   {
-    title: 'Selecting an Access Control Platform for K-12',
-    desc: 'A practical guide to evaluating access control software platforms — covering scalability, integration, cost of ownership, and K-12-specific requirements.',
-    readTime: '12 min read',
-    category: 'Buyer\'s Guide',
-    icon: '📋',
-  },
-  {
-    title: 'Understanding Door Hardware for Schools',
-    desc: 'Life-safety codes, ADA requirements, and locking mode options explained — from electric strikes to classroom function locks.',
-    readTime: '8 min read',
-    category: 'Technical Guide',
+    title: 'Schlage AD Series Lock Selection Guide',
+    desc: 'Choosing between the AD-200, AD-250, AD-300, and AD-400 — understanding wired vs. wireless, standalone vs. networked, and credential compatibility.',
+    readTime: '10 min read',
+    category: "Buyer's Guide",
     icon: '🔒',
   },
   {
-    title: 'Credential Technology Comparison',
-    desc: 'Proximity vs. smart card vs. mobile credentials — what each technology offers and the security trade-offs to consider for school access.',
+    title: 'Understanding Door Hardware for Commercial Facilities',
+    desc: 'Life-safety codes, ADA requirements, and locking mode options explained — from electric strikes to classroom function locks to panic hardware.',
+    readTime: '8 min read',
+    category: 'Technical Guide',
+    icon: '🚪',
+  },
+  {
+    title: 'HID Credential Technology Comparison',
+    desc: 'Proximity vs. smart card vs. mobile credentials — what each technology offers, backward compatibility considerations, and upgrade paths.',
     readTime: '10 min read',
     category: 'Technology',
     icon: '💳',
   },
   {
-    title: 'Writing a Security RFP for Your District',
-    desc: 'Step-by-step guidance for procurement teams preparing a Request for Proposal for access control systems — including scoring criteria and red flags.',
-    readTime: '15 min read',
-    category: 'Procurement',
-    icon: '📄',
-  },
-  {
-    title: 'Visitor Management Best Practices',
-    desc: 'How to design a visitor management workflow that is both welcoming and genuinely secure — covering check-in, screening, and escort protocols.',
+    title: 'Selecting the Right Door Closer',
+    desc: 'How to match LCN closers to door weight, frame type, and usage frequency — plus when to specify electrified hold-open or low-energy operators.',
     readTime: '7 min read',
-    category: 'Operations',
-    icon: '👤',
+    category: 'Technical Guide',
+    icon: '⚙️',
   },
   {
-    title: 'Emergency Lockdown Planning Guide',
-    desc: 'Integrating your access control system with emergency response — automatic lockdown triggers, staff notification, and first-responder access.',
-    readTime: '11 min read',
-    category: 'Emergency Planning',
+    title: 'Von Duprin Exit Device Basics',
+    desc: 'Rim, mortise, and vertical rod exit devices explained — plus integration with electric strikes and electrified hardware for access control systems.',
+    readTime: '9 min read',
+    category: 'Technical Guide',
     icon: '🚨',
+  },
+  {
+    title: 'Ordering Replacement Parts',
+    desc: "How to identify the right replacement part for your Schlage lock, Von Duprin device, or LCN closer — including how to read part numbers and spec sheets.",
+    readTime: '6 min read',
+    category: 'How-To',
+    icon: '📋',
   },
 ]
 
 const faqs = [
   {
-    q: 'How much does a K-12 access control system cost?',
-    a: 'Costs vary widely based on facility size, number of doors, and platform choice. A single-school deployment typically ranges from $30,000 to $150,000. Multi-campus district deployments can run $500,000+. We provide free assessments that include detailed budget projections.',
+    q: 'Do you stock replacement parts for older Schlage locks?',
+    a: 'Yes. We maintain a deep inventory of Schlage AD series parts including reader modules, escutcheons, baseplates, spring cages, levers, latches, and communication modules — for both current and legacy products. If we don\'t have it, we can typically source it within 1–2 days.',
   },
   {
-    q: 'What is the difference between access control and a door lock?',
-    a: 'A door lock is mechanical — it requires a physical key and provides no audit trail. An access control system uses electronic credentials (cards, fobs, mobile), records every entry/exit event, can be managed remotely, and supports time-based scheduling and instant lockdown capability.',
+    q: 'How fast can you ship?',
+    a: 'Most in-stock orders placed before 3pm ship the same day via UPS. Standard UPS ground delivers to most of the continental U.S. within 1–2 business days from our Holland MI, St. Louis MO, or Tampa FL locations.',
   },
   {
-    q: 'How long does installation take?',
-    a: 'A single-school project typically takes 2–6 weeks depending on the number of doors and wiring complexity. We plan all installations to minimize disruption to the school day — weekend and after-hours work is standard.',
+    q: 'Can I order just one or two pieces, or do you have minimum order requirements?',
+    a: 'No minimum order requirements. We serve end users and contractors of all sizes — whether you need one replacement credential or a full case of 500.',
   },
   {
-    q: 'Can we integrate with our existing cameras?',
-    a: 'Yes — most modern access control platforms support video integration. We assess your existing camera system and either integrate it or recommend an upgrade path that aligns with your access control investment.',
+    q: 'What credential technologies do you stock?',
+    a: 'We stock the full range of HID Global credentials including legacy 125kHz proximity cards and fobs, 13.56MHz smart card credentials (iCLASS, iCLASS SE, iCLASS Seos), and FIPS201-compliant options. If you need help identifying the right credential for your existing readers, we can assist.',
   },
   {
-    q: 'What happens to access during a power outage?',
-    a: 'Properly designed systems include battery backup at the door controller level. Doors can be configured to fail-safe (unlock) or fail-secure (stay locked) based on life-safety requirements for each location.',
+    q: 'Can you help me identify a part I need?',
+    a: 'Absolutely. Send us a photo or the model number of the product and we\'ll identify the correct replacement part. Our team has deep product knowledge across all brands we carry.',
   },
   {
-    q: 'Do you offer ongoing support after installation?',
-    a: 'Yes. We offer annual support contracts that include software updates, troubleshooting, and on-site service. Many of our clients have worked with us for 5+ years across multiple upgrade cycles.',
+    q: 'Do you carry products for electrified door applications?',
+    a: 'Yes — we stock electric strikes, magnetic locks, power supplies, electric hinges, request-to-exit bars, lockdown buttons, door position switches, and armored door cords from brands including Von Duprin, Locknetics, and LCN.',
   },
 ]
 
 const industryLinks = [
   { name: 'Security Industry Association (SIA)', url: '#', desc: 'Leading trade association for security solutions providers.' },
-  { name: 'PASS — Partner Alliance for Safer Schools', url: '#', desc: 'Non-profit dedicated to school safety guidelines and standards.' },
   { name: 'ASIS International', url: '#', desc: 'Global security management professionals organization.' },
-  { name: 'National School Safety Center', url: '#', desc: 'Research and training center for school safety initiatives.' },
-  { name: 'CISA School Safety Resources', url: '#', desc: 'Federal agency guidance on school physical security.' },
-  { name: 'Safe and Sound Schools', url: '#', desc: 'National non-profit advancing safety in K-12 environments.' },
+  { name: 'Door Hardware Institute (DHI)', url: '#', desc: 'Professional association for the architectural openings industry.' },
+  { name: 'National Fire Protection Association (NFPA)', url: '#', desc: 'Standards body covering egress, life safety, and door hardware codes.' },
+  { name: 'Allegion Technical Support', url: '#', desc: 'Manufacturer technical resources for Schlage and Von Duprin products.' },
+  { name: 'HID Global Technical Library', url: '#', desc: 'Product documentation, installation guides, and credential specs.' },
 ]
 
 export default function Resources() {
@@ -108,7 +99,7 @@ export default function Resources() {
       <PageHero
         eyebrow="Knowledge Base"
         title="Resources"
-        subtitle="Guides, compliance references, FAQs, and industry links for K-12 security professionals and district administrators."
+        subtitle="Product guides, technical references, FAQs, and industry links for contractors, integrators, and facilities professionals."
         image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80"
       />
 
@@ -117,7 +108,7 @@ export default function Resources() {
         <div className="container mx-auto px-6">
           <div className="flex items-center gap-6 flex-wrap">
             <span className="font-display text-gray-500 text-xs uppercase tracking-widest">Jump to:</span>
-            {['Compliance Guides', 'Tech Guides', 'FAQs', 'Industry Links'].map((section) => (
+            {['Tech Guides', 'FAQs', 'Industry Links'].map((section) => (
               <a
                 key={section}
                 href={`#${section.toLowerCase().replace(/\s+/g, '-')}`}
@@ -125,50 +116,6 @@ export default function Resources() {
               >
                 {section}
               </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* State Compliance Guides */}
-      <section id="compliance-guides" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">By State</span>
-            <h2 className="font-display text-3xl text-gray-900 uppercase tracking-wider mb-4">State Compliance Guides</h2>
-            <div className="w-16 h-px bg-electric-blue mx-auto mb-4" />
-            <p className="text-steel-silver max-w-2xl mx-auto">Each state we serve has distinct school safety legislation. Use these summaries to understand what your district is legally required to implement.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {complianceGuides.map((guide) => (
-              <div key={guide.state} className="border border-gray-100 hover:border-electric-blue/30 hover:shadow-md transition-all p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <span className="font-display text-xs text-electric-cyan uppercase tracking-widest block mb-1">State Guide</span>
-                    <h3 className="font-display text-gray-900 text-xl uppercase tracking-wider">{guide.state}</h3>
-                  </div>
-                  <div className="w-12 h-12 bg-gray-100 flex items-center justify-center font-display text-gray-600 text-sm font-bold">
-                    {guide.code}
-                  </div>
-                </div>
-                <p className="text-electric-blue text-xs font-medium mb-4 leading-snug">{guide.law}</p>
-                <ul className="space-y-2">
-                  {guide.requirements.map((req) => (
-                    <li key={req} className="flex items-start gap-2 text-steel-silver text-xs">
-                      <div className="w-1 h-1 bg-electric-cyan rounded-full flex-shrink-0 mt-1.5" />
-                      {req}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/contact"
-                  className="mt-5 inline-flex items-center gap-2 text-electric-blue text-xs font-display uppercase tracking-widest hover:text-electric-cyan transition-colors"
-                >
-                  Full Compliance Report
-                  <svg viewBox="0 0 24 24" fill="none" className="w-3 h-3"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2"/></svg>
-                </Link>
-              </div>
             ))}
           </div>
         </div>
@@ -235,7 +182,7 @@ export default function Resources() {
           </div>
 
           <div className="text-center mt-10">
-            <p className="text-steel-silver mb-4">Have a question not answered here?</p>
+            <p className="text-steel-silver mb-4">Have a product question not answered here?</p>
             <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-electric-blue text-white font-body font-semibold text-sm uppercase tracking-widest hover:bg-electric-blue/90 transition-all shadow-neon-blue">
               Ask Us Directly
             </Link>
@@ -276,13 +223,13 @@ export default function Resources() {
       <section className="py-20 bg-navy">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-display text-3xl text-white uppercase tracking-wider mb-4">
-            Stay Informed
+            Need a Product or Part?
           </h2>
           <p className="text-gray-300 mb-10 max-w-xl mx-auto">
-            Get the latest K-12 security news, compliance updates, and product announcements — delivered directly to your inbox.
+            Contact us with your product or part number and we&apos;ll check stock and get you a quote fast — same-day shipping available.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-electric-blue text-white font-display uppercase tracking-widest text-sm hover:bg-electric-blue/90 transition-all shadow-neon-blue">
-            Subscribe to Updates
+            Request a Quote
           </Link>
         </div>
       </section>

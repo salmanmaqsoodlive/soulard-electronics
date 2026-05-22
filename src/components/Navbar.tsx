@@ -44,7 +44,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center group">
             <Image
               src="/logo.webp"
-              alt="Soulard Technology"
+              alt="Soulard Electronic Security Products"
               width={160}
               height={48}
               className="h-12 w-auto object-contain"
@@ -80,7 +80,7 @@ export default function Navbar() {
               href="/contact"
               className="relative px-6 py-2.5 text-sm font-medium font-body overflow-hidden group border rounded transition-colors border-electric-blue text-electric-blue hover:bg-electric-blue/10"
             >
-              <span className="relative z-10 tracking-wider uppercase text-xs">Get Consultation</span>
+              <span className="relative z-10 tracking-wider uppercase text-xs">Get a Quote</span>
             </Link>
           </div>
 
@@ -143,7 +143,7 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="mt-4 px-8 py-3 border border-electric-blue text-electric-blue font-body text-sm uppercase tracking-widest hover:bg-electric-blue/10 transition-colors"
                 >
-                  Get Consultation
+                  Get a Quote
                 </Link>
               </motion.div>
             </div>

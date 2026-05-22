@@ -8,14 +8,14 @@ import Footer from '@/components/Footer'
 const contacts = [
   {
     name: 'Greg Hodge',
-    company: 'Soulard Technology',
+    company: 'Soulard Electronic Security Products',
     direct: '616-886-5222',
     tollfree: '866-404-5519',
     email: 'greg.hodge@soulardtechnology.net',
   },
   {
     name: 'Taylor Hodge',
-    company: 'Soulard Technology',
+    company: 'Soulard Electronic Security Products',
     direct: '616-886-0976',
     tollfree: '866-404-5519',
     email: 'taylor.hodge@soulardtechnology.net',
@@ -45,7 +45,7 @@ export default function Contact() {
           </div>
           <h1 className="font-display text-5xl md:text-7xl text-gray-900 uppercase tracking-wider mb-4">Contact Us</h1>
           <p className="text-gray-600 text-lg max-w-xl">
-            Ready to improve security at your institution? Let's start the conversation.
+            Need a quote, product availability check, or technical help? Reach out — we respond fast.
           </p>
         </div>
       </section>
@@ -154,8 +154,8 @@ export default function Contact() {
                       onChange={e => setForm({...form, state: e.target.value})}
                       className="w-full bg-white border border-gray-200 focus:border-electric-blue text-gray-900 px-4 py-3 outline-none transition-colors text-sm"
                     >
-                      <option value="">Select State</option>
-                      {['Florida','Michigan','Illinois','Missouri','Indiana','Ohio'].map(s => (
+                      <option value="">Select Location</option>
+                      {['Holland, MI','St. Louis, MO','Tampa, FL','Other / Ship to Me'].map(s => (
                         <option key={s} value={s}>{s}</option>
                       ))}
                     </select>
@@ -168,7 +168,7 @@ export default function Contact() {
                       value={form.message}
                       onChange={e => setForm({...form, message: e.target.value})}
                       className="w-full bg-white border border-gray-200 focus:border-electric-blue text-gray-900 px-4 py-3 outline-none transition-colors text-sm resize-none"
-                      placeholder="Tell us about your institution and security needs..."
+                      placeholder="Tell us what products or parts you need..."
                     />
                   </div>
                   <button
@@ -199,16 +199,16 @@ export default function Contact() {
             {/* Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="font-display text-gray-900 text-2xl uppercase tracking-wider mb-4">Get a Free Assessment</h2>
+                <h2 className="font-display text-gray-900 text-2xl uppercase tracking-wider mb-4">Fast Quotes &amp; Same-Day Shipping</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Our initial consultation is completely free. We'll assess your current security posture, discuss your goals, and provide actionable recommendations — with no obligation.
+                  Need a product quote, want to check stock availability, or have a technical question? Send us a message and we&apos;ll get back to you fast — usually within a few hours.
                 </p>
               </div>
               <div className="space-y-4">
                 <div className="border border-gray-100 p-5">
-                  <div className="font-display text-electric-cyan text-xs tracking-widest uppercase mb-3">Service Areas</div>
+                  <div className="font-display text-electric-cyan text-xs tracking-widest uppercase mb-3">Stocking Locations</div>
                   <div className="flex flex-wrap gap-2">
-                    {['Florida','Michigan','Illinois','Missouri','Indiana','Ohio'].map(s => (
+                    {['Holland, MI','St. Louis, MO','Tampa, FL'].map(s => (
                       <span key={s} className="text-gray-600 text-sm border border-electric-blue/20 px-3 py-1">{s}</span>
                     ))}
                   </div>
@@ -216,6 +216,10 @@ export default function Contact() {
                 <div className="border border-gray-100 p-5">
                   <div className="font-display text-electric-cyan text-xs tracking-widest uppercase mb-2">Response Time</div>
                   <div className="text-gray-900 text-sm">Within 24 business hours</div>
+                </div>
+                <div className="border border-gray-100 p-5">
+                  <div className="font-display text-electric-cyan text-xs tracking-widest uppercase mb-2">Shipping</div>
+                  <div className="text-gray-900 text-sm">Same-day on in-stock items &bull; UPS 1–2 day delivery</div>
                 </div>
                 <div className="border border-gray-100 p-5">
                   <div className="font-display text-electric-cyan text-xs tracking-widest uppercase mb-3">Toll-Free</div>

@@ -41,8 +41,13 @@ module.exports = {
         'scan': 'scan 3s linear infinite',
         'glow': 'glow 2s ease-in-out infinite',
         'count-up': 'countUp 2s ease-out forwards',
+        'marquee': 'marquee 30s linear infinite',
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },

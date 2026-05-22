@@ -1,26 +1,21 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Manufacturers | Soulard Technology',
-  description: 'Soulard Technology partners with Allegion (Schlage) and HID Global — the industry leaders in access control hardware, credentials, and readers.',
+  title: 'Manufacturers | Soulard Electronic Security Products',
+  description: 'We stock products from the most trusted brands in electronic security — Allegion, Schlage, HID, Von Duprin, LCN, Aiphone, BEA, Vanderbilt, and Locknetics.',
 }
 
 const manufacturers = [
   {
     name: 'Allegion / Schlage',
-    category: 'Door Hardware & Locking',
-    desc: 'Allegion is a global pioneer in safety and security, with Schlage as its flagship brand. From wireless tubular locks to fully networked hardwired exit trim, Allegion delivers the physical locking infrastructure that anchors every access control deployment. Soulard Technology specifies Allegion hardware across K-12 facilities for its reliability, deep wireless capability, and seamless integration with electronic access platforms.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
-        <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" strokeWidth="1.5"/>
-        <circle cx="12" cy="16" r="1" fill="currentColor"/>
-      </svg>
-    ),
+    category: 'Electronic Locks & Door Hardware',
+    logo: '/Allegion.webp',
+    desc: 'Allegion is a global pioneer in safety and security, with Schlage as its flagship locking brand. From wireless tubular locks to fully networked hardwired exit trim, Allegion delivers the physical locking infrastructure that anchors every access control deployment. We stock a comprehensive range of Schlage AD series, XE360, LE, NDEB, and Control series locks as well as all associated parts and accessories.',
     groups: [
       {
         heading: 'Wireless Locks',
@@ -48,18 +43,14 @@ const manufacturers = [
         ],
       },
       {
-        heading: 'Lock Parts & Accessories',
+        heading: 'Parts & Accessories',
         items: [
           'Reader Modules (KP, MS, MSK, MT/SI, MTK/SIK/FMK, DT)',
-          'Interior & Exterior Escutcheons',
-          'Interior & Exterior Baseplates and Subassemblies',
-          'Spring Cages (Interior & Exterior)',
-          'Latches & Levers',
-          'Spindle and Hub Kit / Spindle Spring',
+          'Interior & Exterior Escutcheons and Baseplates',
+          'Spring Cages, Latches, and Levers',
           'Communication Modules (Hardwired & Wireless)',
-          'Upgrade Kits (Hardwired & Wireless)',
-          'Battery Holder Kits',
-          'Wiring Harness, Rex Switch, Motor Drive Assembly',
+          'Upgrade Kits, Battery Holders, Wiring Harness',
+          'Spindle & Hub Kit, Rex Switch, Motor Drive Assembly',
         ],
       },
     ],
@@ -67,14 +58,8 @@ const manufacturers = [
   {
     name: 'HID Global',
     category: 'Credentials & Readers',
-    desc: "HID Global is the world's leading provider of trusted identity solutions. Their readers and credentials are the front line of access control — the point where a person proves who they are. Soulard Technology deploys HID products for their unmatched interoperability, longevity in the field, and support for the full spectrum of credential technologies from legacy proximity through to mobile and FIPS201-compliant smart cards.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
-        <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M2 10h20" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M6 15h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
+    logo: '/hid.webp',
+    desc: "HID Global is the world's leading provider of trusted identity solutions. Their readers and credentials are the front line of access control — the point where a person proves who they are. We stock the full range of HID readers and credentials, supporting legacy proximity through to mobile and FIPS201-compliant smart card technologies.",
     groups: [
       {
         heading: 'Readers',
@@ -82,6 +67,7 @@ const manufacturers = [
           'Mobile-Enabled Multi-Technology Readers',
           'Proximity and Magstripe Readers',
           'FIPS201 Compliant Readers',
+          'Signo Reader Series',
         ],
       },
       {
@@ -91,6 +77,163 @@ const manufacturers = [
           'Proximity & Smart Technology Key Fobs',
           'Proximity Tag Stickers',
           'Non-Technology Cards',
+          'iCLASS SE Credentials',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Von Duprin',
+    category: 'Panic Hardware & Exit Devices',
+    logo: '/Von_Duprin_Gray.webp',
+    desc: 'Von Duprin is the industry standard for panic hardware and exit devices. Their products meet life-safety codes while offering electrified options for access control integration. We stock Von Duprin rim devices, mortise devices, and electric strikes for commercial door applications.',
+    groups: [
+      {
+        heading: 'Exit Devices',
+        items: [
+          'Rim Exit Devices',
+          'Mortise Exit Devices',
+          'Concealed Vertical Rod Devices',
+          'Surface Vertical Rod Devices',
+        ],
+      },
+      {
+        heading: 'Electrified Hardware',
+        items: [
+          'Electric Strikes',
+          'Electrified Exit Devices',
+          'Request-to-Exit Bars',
+          'Power Transfers',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'LCN',
+    category: 'Door Closers & Electrified Hardware',
+    logo: '/lcn.webp',
+    desc: 'LCN is the premier brand for commercial door closers and electrified door hardware in North America. From standard surface closers to low-energy power operators, LCN products ensure doors close reliably every time while supporting ADA compliance and access control integration.',
+    groups: [
+      {
+        heading: 'Door Closers',
+        items: [
+          'Surface-Mounted Door Closers',
+          'Concealed Door Closers',
+          'Parallel Arm Closers',
+          'Hold-Open Closers',
+        ],
+      },
+      {
+        heading: 'Electrified Products',
+        items: [
+          'Electromagnetic Hold-Opens',
+          'Low-Energy Power Operators',
+          'Automatic Door Operators',
+          'Electric Hinges',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Aiphone',
+    category: 'Video Intercom Systems',
+    logo: '/aiphone.webp',
+    desc: 'Aiphone is a global leader in intercom communication systems. Their video intercom products enable secure, visual verification at building entry points and integrate with access control systems for controlled building access. We stock Aiphone IX, GT, and JO series systems for a wide range of applications.',
+    groups: [
+      {
+        heading: 'Video Intercom Systems',
+        items: [
+          'IX Series IP Video Intercom',
+          'GT Series Multi-Tenant System',
+          'JO Series Video Intercom',
+          'Door Stations and Master Stations',
+        ],
+      },
+      {
+        heading: 'Accessories',
+        items: [
+          'Surface and Flush Mount Boxes',
+          'Door Station Rain Hoods',
+          'Power Supplies',
+          'Network Adapters and Controllers',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'BEA',
+    category: 'Motion Sensors & Activators',
+    logo: '/bea.webp',
+    desc: 'BEA is the leading manufacturer of sensing and activation technology for automatic doors, security gates, and access control systems. Their motion sensors, presence detectors, and push plates are used wherever hands-free door activation is required.',
+    groups: [
+      {
+        heading: 'Sensors & Activators',
+        items: [
+          'Microwave Motion Sensors',
+          'Infrared Presence Detectors',
+          'Safety Sensors',
+          'Push Plates and Wireless Activators',
+        ],
+      },
+      {
+        heading: 'Applications',
+        items: [
+          'Automatic Sliding Door Activation',
+          'Swing Door Operators',
+          'Access Control Request-to-Exit',
+          'Gate and Barrier Activation',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Vanderbilt',
+    category: 'Access Control Systems',
+    logo: '/Vanderbilt.webp',
+    desc: 'Vanderbilt provides scalable access control systems and security management platforms for commercial and enterprise facilities. Their products range from standalone controllers to fully networked, cloud-managed access platforms suitable for multi-site deployments.',
+    groups: [
+      {
+        heading: 'Access Control',
+        items: [
+          'ACT Enterprise Access Controllers',
+          'ACT Pro Standalone Controllers',
+          'SMS Access Management Software',
+          'Network Door Controllers',
+        ],
+      },
+      {
+        heading: 'System Integration',
+        items: [
+          'Video Management Integration',
+          'Intrusion Detection Integration',
+          'Cloud-Based Management',
+          'Mobile Credential Support',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Locknetics',
+    category: 'Electrified Locking Products',
+    logo: '/locknetics.webp',
+    desc: 'Locknetics by Allegion specializes in electrified locking products, electric strikes, and magnetic locks for commercial door access control applications. Their products provide reliable electric locking solutions that integrate with virtually any access control system.',
+    groups: [
+      {
+        heading: 'Electric Locking',
+        items: [
+          'Electric Strikes',
+          'Magnetic Locks',
+          'Electromagnetic Locks',
+          'Fail-Safe and Fail-Secure Options',
+        ],
+      },
+      {
+        heading: 'Accessories',
+        items: [
+          'Power Supplies',
+          'Monitoring Stations',
+          'Door Position Switches',
+          'Lockdown Buttons',
         ],
       },
     ],
@@ -103,9 +246,9 @@ export default function Manufacturers() {
       <Navbar />
 
       <PageHero
-        eyebrow="Our Partners"
+        eyebrow="Our Brands"
         title="Manufacturers"
-        subtitle="We partner with Allegion and HID Global — two of the most trusted names in access control hardware, credentials, and readers."
+        subtitle="We stock products from the most trusted names in electronic security and commercial door hardware — ready to ship same day."
         image="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
       />
 
@@ -113,7 +256,7 @@ export default function Manufacturers() {
       <section className="py-12 bg-electric-blue">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white text-lg font-body max-w-3xl mx-auto leading-relaxed">
-            Soulard Technology is manufacturer-agnostic. We recommend Allegion and HID products because they consistently deliver the best outcomes for K-12 institutions — not because of vendor agreements.
+            Every brand we carry was chosen for field-proven reliability, product depth, and the ability to serve end users with new and replacement parts. We stock what you need — when you need it.
           </p>
         </div>
       </section>
@@ -122,8 +265,8 @@ export default function Manufacturers() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Trusted Brands</span>
-            <h2 className="font-display text-3xl md:text-4xl text-gray-900 uppercase tracking-wider mb-4">Our Manufacturer Partners</h2>
+            <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Stocked Brands</span>
+            <h2 className="font-display text-3xl md:text-4xl text-gray-900 uppercase tracking-wider mb-4">Brands We Carry</h2>
             <div className="w-16 h-px bg-electric-blue mx-auto" />
           </div>
 
@@ -132,8 +275,8 @@ export default function Manufacturers() {
               <div key={mfr.name} className="border border-gray-100 rounded-lg overflow-hidden">
                 {/* Header */}
                 <div className="flex items-start gap-5 px-6 py-6 bg-gray-50 border-b border-gray-100">
-                  <div className="w-12 h-12 flex items-center justify-center bg-electric-blue/10 text-electric-blue flex-shrink-0">
-                    {mfr.icon}
+                  <div className="w-20 h-14 relative flex-shrink-0 bg-white border border-gray-100 rounded p-1">
+                    <Image src={mfr.logo} alt={mfr.name} fill className="object-contain" />
                   </div>
                   <div>
                     <span className="font-display text-electric-cyan text-xs tracking-[0.3em] uppercase">{mfr.category}</span>
@@ -167,19 +310,16 @@ export default function Manufacturers() {
         </div>
       </section>
 
-      {/* Why agnostic */}
+      {/* CTA */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl text-center">
-          <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Our Approach</span>
-          <h2 className="font-display text-3xl text-gray-900 uppercase tracking-wider mb-6">Manufacturer-Agnostic Consulting</h2>
+          <span className="font-display text-electric-cyan text-xs tracking-[0.4em] uppercase block mb-4">Need Something?</span>
+          <h2 className="font-display text-3xl text-gray-900 uppercase tracking-wider mb-6">Can&apos;t Find What You Need?</h2>
           <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-            We are not a reseller or a manufacturer's rep. We earn no commissions or bonuses for recommending one brand over another. Our only obligation is to you — the school district — and to finding the solution that best fits your needs and budget.
-          </p>
-          <p className="text-gray-600 leading-relaxed mb-10">
-            This independence allows us to mix and match products from different manufacturers, leverage your existing infrastructure investments, and negotiate from a position of knowledge on your behalf.
+            If we don&apos;t have your specific part or product in stock, we can typically source it from our manufacturer network within 1–2 days.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-electric-blue text-white font-display uppercase tracking-widest text-sm hover:bg-electric-blue/90 transition-all shadow-neon-blue">
-            Get Unbiased Advice
+            Ask About a Product
             <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2"/></svg>
           </Link>
         </div>
