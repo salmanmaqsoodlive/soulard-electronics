@@ -84,7 +84,7 @@ export default function Catalogs() {
         eyebrow="Literature & Downloads"
         title="Catalogs"
         subtitle="Product catalogs, data sheets, and solution guides from our manufacturer partners — everything you need to specify the right system."
-        image="https://images.unsplash.com/photo-1568667256549-094345857afc?w=1920&q=80"
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
       />
 
       {/* Filter bar */}

@@ -59,6 +59,103 @@ const serviceAreas = [
   "Ohio",
 ];
 
+const testimonials = [
+  {
+    quote: "Soulard Technology transformed how our district approaches security. Their budget-conscious approach delivered enterprise-grade access control across all 12 of our facilities.",
+    name: "James Davidson",
+    title: "Director of Safety, Metro School District",
+    initials: "JD",
+  },
+  {
+    quote: "From the initial assessment to final commissioning, the team was professional and thorough. We now have full visibility across our entire campus from a single pane of glass.",
+    name: "Dr. Lisa Tran",
+    title: "Chief of Campus Security, Westfield University",
+    initials: "LT",
+  },
+  {
+    quote: "We needed a system that met HIPAA requirements without disrupting patient flow. Soulard delivered exactly that — on time and under budget.",
+    name: "Robert Okafor",
+    title: "Facilities Director, St. Augustine Medical Center",
+    initials: "RO",
+  },
+];
+
+function TestimonialCarousel() {
+  const [index, setIndex] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const t = testimonials[index];
+
+  const resetTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setIndex((i) => (i + 1) % testimonials.length);
+    }, 5000);
+  };
+
+  useEffect(() => {
+    resetTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, []);
+
+  const go = (i: number) => { setIndex(i); resetTimer(); };
+
+  return (
+    <div className="max-w-3xl mx-auto text-center">
+      <div className="relative min-h-[220px] flex items-center justify-center">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.35 }}
+          className="absolute inset-0 flex flex-col items-center justify-center"
+        >
+          <p className="font-body text-xl text-steel-silver leading-relaxed mb-8 italic">
+            {t.quote}
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-electric-blue/20 flex items-center justify-center text-electric-cyan font-display">
+              {t.initials}
+            </div>
+            <div className="text-left">
+              <div className="text-gray-900 font-semibold text-sm">{t.name}</div>
+              <div className="text-steel-silver text-xs">{t.title}</div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      </div>
+
+      {/* Dot navigation */}
+      <div className="flex items-center justify-center gap-3 mt-10">
+        <button
+          onClick={() => go((index - 1 + testimonials.length) % testimonials.length)}
+          className="w-8 h-8 flex items-center justify-center border border-gray-200 hover:border-electric-blue/50 text-steel-silver hover:text-electric-blue transition-colors"
+          aria-label="Previous"
+        >
+          <svg viewBox="0 0 24 24" fill="none" className="w-3 h-3"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2"/></svg>
+        </button>
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => go(i)}
+            className={`w-2 h-2 rounded-full transition-all ${i === index ? 'bg-electric-blue w-6' : 'bg-gray-300 hover:bg-gray-400'}`}
+            aria-label={`Go to testimonial ${i + 1}`}
+          />
+        ))}
+        <button
+          onClick={() => go((index + 1) % testimonials.length)}
+          className="w-8 h-8 flex items-center justify-center border border-gray-200 hover:border-electric-blue/50 text-steel-silver hover:text-electric-blue transition-colors"
+          aria-label="Next"
+        >
+          <svg viewBox="0 0 24 24" fill="none" className="w-3 h-3"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2"/></svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
@@ -507,31 +604,7 @@ export default function Home() {
       {/* TESTIMONIAL */}
       <section className="py-20 bg-navy-800">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <p className="font-body text-xl text-steel-silver leading-relaxed mb-8 italic">
-              Soulard Technology transformed how our district approaches
-              security. Their budget-conscious approach delivered
-              enterprise-grade access control across all 12 of our facilities.
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-electric-blue/20 flex items-center justify-center text-electric-cyan font-display">
-                JD
-              </div>
-              <div className="text-left">
-                <div className="text-gray-900 font-semibold text-sm">
-                  James Davidson
-                </div>
-                <div className="text-steel-silver text-xs">
-                  Director of Safety, Metro School District
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <TestimonialCarousel />
         </div>
       </section>
 

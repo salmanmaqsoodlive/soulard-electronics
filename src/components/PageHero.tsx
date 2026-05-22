@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import Image from 'next/image'
 
 interface Props {
   eyebrow: string
@@ -12,10 +13,15 @@ export default function PageHero({ eyebrow, title, subtitle, image, children }: 
   return (
     <section className="relative pt-32 pb-20 overflow-hidden bg-white">
       {image && (
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url(${image})` }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="object-cover object-center opacity-20"
+            priority
+          />
+        </div>
       )}
       <div
         className="absolute inset-0 opacity-60"
