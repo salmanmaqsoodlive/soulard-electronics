@@ -35,8 +35,8 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-xl border-b border-electric-blue/20 shadow-sm py-3'
-            : 'bg-white/80 backdrop-blur-sm py-5'
+            ? 'bg-white/95 backdrop-blur-xl border-b border-electric-blue/20 shadow-sm py-2'
+            : 'bg-white/80 backdrop-blur-sm py-4'
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
@@ -45,9 +45,9 @@ export default function Navbar() {
             <Image
               src="/logo.jpg"
               alt="Soulard Electronic Security Products"
-              width={160}
-              height={48}
-              className="h-12 w-auto object-contain"
+              width={196}
+              height={56}
+              className="h-14 w-auto object-contain"
               priority
             />
           </Link>

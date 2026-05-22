@@ -21,9 +21,9 @@ export default function Footer() {
               <Image
                 src="/logo.jpg"
                 alt="Soulard Technology"
-                width={160}
-                height={48}
-                className="h-10 w-auto object-contain"
+                width={196}
+                height={56}
+                className="h-14 w-auto object-contain"
               />
             </div>
             <p className="text-steel-silver text-sm leading-relaxed mb-6">

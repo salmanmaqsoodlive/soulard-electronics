@@ -15,11 +15,11 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Soulard Technology | Electronic Access Control Consulting',
+  title: 'Soulard Electronics | Electronic Access Control Consulting',
   description: 'Security management system consulting, training and support specializing in K-12 education markets across Florida, Michigan, Illinois, Missouri, Indiana, and Ohio.',
   keywords: 'electronic access control, security consulting, K-12 security, school security systems, access control training, Missouri, Florida, Michigan, Illinois, Indiana, Ohio',
   openGraph: {
-    title: 'Soulard Technology | Electronic Access Control Consulting',
+    title: 'Soulard Electronics | Electronic Access Control Consulting',
     description: 'Trusted security management system consulting for K-12 institutions.',
     type: 'website',
   },
