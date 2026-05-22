@@ -205,6 +205,8 @@ export default function Home() {
               {
                 heading: 'Inventory',
                 description: 'Large inventory, same-day shipping and technical support.',
+                image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80',
+                imageAlt: 'Organized warehouse shelving with technology inventory',
                 icon: (
                   <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
                     <rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -216,6 +218,8 @@ export default function Home() {
               {
                 heading: 'Quick Shipping',
                 description: 'With the most products on the shelf and UPS delivery in 1–2 days, we eliminate unnecessary delays on your project.',
+                image: 'https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=800&q=80',
+                imageAlt: 'Packages ready for fast delivery and shipping',
                 icon: (
                   <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
                     <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
@@ -227,6 +231,8 @@ export default function Home() {
               {
                 heading: 'Parts',
                 description: 'Whatever part, component, or accessory you need — if we don\'t stock it, we can typically get it to you in 1–2 days.',
+                image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+                imageAlt: 'Electronic components and circuit board parts',
                 icon: (
                   <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
                     <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -240,13 +246,24 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="flex flex-col items-start p-8 border border-gray-100 hover:border-electric-blue/30 hover:shadow-md transition-all"
+                className="flex flex-col border border-gray-100 hover:border-electric-blue/30 hover:shadow-md transition-all overflow-hidden"
               >
-                <div className="w-14 h-14 flex items-center justify-center bg-electric-blue/10 text-electric-blue mb-6">
-                  {item.icon}
+                <div className="relative h-52 w-full">
+                  <Image
+                    src={item.image}
+                    alt={item.imageAlt}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-navy-800/20" />
                 </div>
-                <h3 className="font-display text-gray-900 text-lg uppercase tracking-wider mb-3">{item.heading}</h3>
-                <p className="font-body text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                <div className="flex flex-col items-start p-8">
+                  <div className="w-14 h-14 flex items-center justify-center bg-electric-blue/10 text-electric-blue mb-6">
+                    {item.icon}
+                  </div>
+                  <h3 className="font-display text-gray-900 text-lg uppercase tracking-wider mb-3">{item.heading}</h3>
+                  <p className="font-body text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
