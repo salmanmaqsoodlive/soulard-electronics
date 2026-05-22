@@ -83,6 +83,34 @@ const manufacturers = [
     ],
   },
   {
+    name: 'Schlage Credentials & Readers',
+    category: 'Credentials & Readers',
+    logo: '/schlage.webp',
+    desc: "Schlage by Allegion offers a full line of credentials and readers designed to work seamlessly with Schlage and third-party access control platforms. From proximity cards to mobile-enabled smart credentials, Schlage readers and cards provide the flexibility to support legacy and modern deployments across a wide range of facilities.",
+    groups: [
+      {
+        heading: 'Readers',
+        items: [
+          'Proximity Readers',
+          'Smart Card Readers',
+          'Mobile-Enabled Readers',
+          'Multi-Technology Readers',
+          'Keypad Readers',
+        ],
+      },
+      {
+        heading: 'Credentials',
+        items: [
+          'Proximity Cards & Key Fobs',
+          'Smart Cards (iCLASS / DESFire)',
+          'Mobile Credentials',
+          'Dual-Technology Cards',
+          'Wristbands & Tag Stickers',
+        ],
+      },
+    ],
+  },
+  {
     name: 'Von Duprin',
     category: 'Panic Hardware & Exit Devices',
     logo: '/Von_Duprin_Gray.webp',

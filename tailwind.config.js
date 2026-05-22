@@ -42,6 +42,7 @@ module.exports = {
         'glow': 'glow 2s ease-in-out infinite',
         'count-up': 'countUp 2s ease-out forwards',
         'marquee': 'marquee 30s linear infinite',
+        'marquee-reverse': 'marquee-reverse 35s linear infinite',
       },
       keyframes: {
         marquee: {
@@ -59,6 +60,10 @@ module.exports = {
         glow: {
           '0%, 100%': { boxShadow: '0 0 20px rgba(204,0,0,0.3)' },
           '50%': { boxShadow: '0 0 40px rgba(229,62,62,0.6)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
         },
       },
       boxShadow: {

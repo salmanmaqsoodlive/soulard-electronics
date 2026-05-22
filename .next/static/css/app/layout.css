@@ -737,6 +737,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -814,6 +818,9 @@ video {
 }
 .mt-auto {
   margin-top: auto;
+}
+.mt-8 {
+  margin-top: 2rem;
 }
 .line-clamp-2 {
   overflow: hidden;
@@ -910,6 +917,9 @@ video {
 }
 .h-px {
   height: 1px;
+}
+.h-1 {
+  height: 0.25rem;
 }
 .min-h-\[220px\] {
   min-height: 220px;
@@ -1037,6 +1047,19 @@ video {
 .animate-pulse-slow {
   animation: pulse 4s ease-in-out infinite;
 }
+@keyframes marquee-reverse {
+
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+.animate-marquee-reverse {
+  animation: marquee-reverse 35s linear infinite;
+}
 .cursor-default {
   cursor: default;
 }
@@ -1160,6 +1183,9 @@ video {
 }
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 .break-all {
   word-break: break-all;

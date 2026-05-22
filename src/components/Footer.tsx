@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <div className="mb-6 inline-block bg-white rounded px-3 py-2">
               <Image
-                src="/logo.webp"
+                src="/logo.jpg"
                 alt="Soulard Technology"
                 width={160}
                 height={48}
@@ -58,8 +58,8 @@ export default function Footer() {
             <div className="space-y-4 text-sm text-steel-silver">
               <p>Holland, MI &bull; St. Louis, MO &bull; Tampa, FL</p>
               <div className="space-y-1">
-                <a href="mailto:greg.hodge@soulardtechnology.net" className="block hover:text-electric-blue transition-colors">greg.hodge@soulardtechnology.net</a>
-                <a href="mailto:taylor.hodge@soulardtechnology.net" className="block hover:text-electric-blue transition-colors">taylor.hodge@soulardtechnology.net</a>
+                <a href="mailto:greg.hodge@soulardesp.com" className="block hover:text-electric-blue transition-colors">greg.hodge@soulardesp.com</a>
+                <a href="mailto:taylor.hodge@soulardesp.com" className="block hover:text-electric-blue transition-colors">taylor.hodge@soulardesp.com</a>
               </div>
               <a href="tel:866-404-5519" className="block hover:text-electric-blue transition-colors">866-404-5519</a>
               <Link

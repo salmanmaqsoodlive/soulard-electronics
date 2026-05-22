@@ -43,7 +43,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/logo.webp"
+              src="/logo.jpg"
               alt="Soulard Electronic Security Products"
               width={160}
               height={48}
