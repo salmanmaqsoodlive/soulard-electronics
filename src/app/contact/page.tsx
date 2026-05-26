@@ -24,11 +24,38 @@ const contacts = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({ name: '', email: '', phone: '', state: '', message: '' })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/greg.hodge@soulardtechnology.net', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone || 'Not provided',
+          location: form.state || 'Not specified',
+          message: form.message,
+          _subject: `New Contact Form Submission from ${form.name}`,
+        }),
+      })
+      const data = await res.json()
+      if (data.success === 'true' || data.success === true) {
+        setSubmitted(true)
+      } else {
+        setError('Something went wrong. Please try again or email us directly.')
+      }
+    } catch {
+      setError('Failed to send message. Please check your connection and try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -171,11 +198,15 @@ export default function Contact() {
                       placeholder="Tell us what products or parts you need..."
                     />
                   </div>
+                  {error && (
+                    <p className="text-red-500 text-sm border border-red-200 bg-red-50 px-4 py-3">{error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="w-full py-4 bg-electric-blue hover:bg-electric-blue/90 text-white font-display uppercase tracking-widest text-sm transition-all shadow-neon-blue hover:-translate-y-0.5"
+                    disabled={loading}
+                    className="w-full py-4 bg-electric-blue hover:bg-electric-blue/90 disabled:opacity-60 disabled:cursor-not-allowed text-white font-display uppercase tracking-widest text-sm transition-all shadow-neon-blue hover:-translate-y-0.5"
                   >
-                    Send Message
+                    {loading ? 'Sending…' : 'Send Message'}
                   </button>
                 </motion.form>
               ) : (

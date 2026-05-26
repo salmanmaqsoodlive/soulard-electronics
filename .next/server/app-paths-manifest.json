@@ -1,4 +1,14 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/contact/page": "app/contact/page.js",
   "/page": "app/page.js",
-  "/manufacturers/page": "app/manufacturers/page.js"
+  "/about/page": "app/about/page.js",
+  "/case-studies/page": "app/case-studies/page.js",
+  "/industries/page": "app/industries/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/products/page": "app/products/page.js",
+  "/resources/page": "app/resources/page.js",
+  "/manufacturers/page": "app/manufacturers/page.js",
+  "/catalogs/page": "app/catalogs/page.js",
+  "/training/page": "app/training/page.js"
 }
